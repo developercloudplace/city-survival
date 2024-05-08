@@ -2,13 +2,13 @@
 #
 # Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
 #
-/[Ll]ibrary/
-/[Tt]emp/
-/[Oo]bj/
-/[Bb]uild/
-/[Bb]uilds/
-/[Ll]ogs/
-/[Uu]ser[Ss]ettings/
+/src/city-survival/[Ll]ibrary/
+/src/city-survival/[Tt]emp/
+/src/city-survival/[Oo]bj/
+/src/city-survival/[Bb]uild/
+/src/city-survival/[Bb]uilds/
+/src/city-survival/[Ll]ogs/
+/src/city-survival/[Uu]ser[Ss]ettings/
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
