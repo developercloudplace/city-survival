@@ -1,7 +1,5 @@
 ﻿using Code.Gameplay.Common.Time;
 using Entitas;
-using UnityEngine;
-using NotImplementedException = System.NotImplementedException;
 
 namespace Code.Gameplay.Features.Movement.System
 {

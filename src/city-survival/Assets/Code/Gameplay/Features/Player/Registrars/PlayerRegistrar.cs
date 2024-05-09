@@ -1,5 +1,6 @@
 ﻿using System;
 using Code.Common.Entity;
+using Code.Common.Extensions;
 using UnityEngine;
 
 namespace Code.Gameplay.Features.Player.Registrars
@@ -14,9 +15,12 @@ namespace Code.Gameplay.Features.Player.Registrars
         {
             _entity = CreateEntity
                 .Empty()
+                .AddTransform(transform)
                 .AddWorldPosition(transform.position)
                 .AddSpeed(Speed)
-                .AddDirection(Vector3.zero);
+                .AddDirection(Vector3.zero)
+                .With(x=>x.isPlayer = true)
+                ;
         }
     }
 }
