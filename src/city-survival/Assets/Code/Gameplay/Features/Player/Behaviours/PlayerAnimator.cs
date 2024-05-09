@@ -17,19 +17,7 @@ namespace Code.Gameplay.Features.Player.Behaviours
 
         public void PlayDied() => Animator.SetTrigger(_diedHash);
 
-        public void PlayDamageTaken()
-        {
-            // if (DOTween.IsTweening(Material))
-            //     return;
-
-            // Material.DOFloat(0.5f, OverlayIntensityProperty, 0.15f)
-            //     .OnComplete(() =>
-            //     {
-            //         if (SpriteRenderer)
-            //             Material.DOFloat(0, OverlayIntensityProperty, 0.15f);
-            //     });
-        }
-
+        
         public void ResetAll()
         {
             Animator.ResetTrigger(_attackHash);

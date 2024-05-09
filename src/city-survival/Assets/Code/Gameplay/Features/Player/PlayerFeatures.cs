@@ -7,6 +7,7 @@ namespace Code.Gameplay.Features.Player
         public PlayerFeatures(GameContext gameContext)
         {
             Add(new SetPlayerDirectionByInput(gameContext));
+            Add(new AnimatePlayerMovementSystem(gameContext));
         }
     }
 }
