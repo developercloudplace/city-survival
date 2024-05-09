@@ -20,14 +20,14 @@ namespace Code.Gameplay.Input.System
             foreach (GameEntity input in _inputs)
             {
                 if (_inputService.HasAxisInput())
-                    input.ReplaceAxisInput(new Vector3(
-                        _inputService.GetHorizontalAxis(),
+                    input.ReplaceAxisInput(new Vector3(_inputService.GetHorizontalAxis(), 
+                        0,
                         _inputService.GetVerticalAxis()));
                 else if (input.hasAxisInput)
                     input.RemoveAxisInput();
 
 
-                //TODO : Add add a different input method
+                //TODO : Add a different input method
             }
         }
     }
