@@ -8,22 +8,21 @@ using Code.Gameplay.Levels;
 using Code.Infrastructure.AssetManagement;
 using Code.Infrastructure.Identifiers;
 using Code.Infrastructure.Loading;
-using UnityEngine.SceneManagement;
 using Zenject;
 
 namespace Code.Infrastructure
 {
-    public class BootstrapInstaller : MonoInstaller ,ICoroutineRunner, IInitializable
+    public class BootstrapInstaller : MonoInstaller, ICoroutineRunner, IInitializable
     {
         public override void InstallBindings()
         {
-            BindContext();
-            BindCameraProvider();
-            BindGameplayService();
-            BindAssetManagerService();
+            BindInputService();
             BindInfrastructureServices();
             BindCommonService();
-            
+            BindAssetManagerService();
+            BindContext();
+            BindGameplayService();
+            BindCameraProvider();
         }
 
         private void BindContext()
@@ -56,6 +55,7 @@ namespace Code.Infrastructure
             Container.Bind<ITimeService>().To<UnityTimeService>().AsSingle();
             Container.Bind<ISceneLoader>().To<SceneLoader>().AsSingle();
         }
+
         private void BindInputService()
         {
             Container.Bind<IInputService>().To<StandaloneInputService>().AsSingle();
@@ -66,7 +66,7 @@ namespace Code.Infrastructure
 
         public void Initialize()
         {
-              Container.Resolve<ISceneLoader>().LoadScene("Game");
+            Container.Resolve<ISceneLoader>().LoadScene("Game");
         }
     }
 }

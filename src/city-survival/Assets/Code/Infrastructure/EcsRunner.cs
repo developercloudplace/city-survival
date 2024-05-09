@@ -8,17 +8,16 @@ namespace Code.Infrastructure
 {
     public class EcsRunner : MonoBehaviour
     {
-        private MainGameplayFeatures _mainGameplayFeatures;
-
         private GameContext _gameContext;
         private ITimeService _time;
+        private MainGameplayFeatures _mainGameplayFeatures;
         private IInputService _inputService;
-        
+
         [Inject]
         private void Construct(GameContext gameContext, ITimeService time, IInputService inputService)
         {
-            _time = time;
             _gameContext = gameContext;
+            _time = time;
             _inputService = inputService;
         }
 
