@@ -19,10 +19,10 @@ namespace Code.Infrastructure
             BindInputService();
             BindInfrastructureServices();
             BindCommonService();
+            BindCameraProvider();
             BindAssetManagerService();
             BindContext();
             BindGameplayService();
-            BindCameraProvider();
         }
 
         private void BindContext()
@@ -61,7 +61,10 @@ namespace Code.Infrastructure
             Container.Bind<IInputService>().To<StandaloneInputService>().AsSingle();
         }
 
-        private void BindCameraProvider() => Container.Bind<CameraProvider>().AsSingle();
+        private void BindCameraProvider()
+        {
+            Container.BindInterfacesAndSelfTo<CameraProvider>().AsSingle();
+        }
 
 
         public void Initialize()

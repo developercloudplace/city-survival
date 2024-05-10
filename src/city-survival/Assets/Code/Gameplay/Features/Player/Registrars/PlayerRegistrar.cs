@@ -17,16 +17,15 @@ namespace Code.Gameplay.Features.Player.Registrars
         private void Awake()
         {
             _entity = CreateEntity
-                .Empty()
-                .AddTransform(transform)
-                .AddRotate(transform.rotation)
-                .AddWorldPosition(transform.position)
-                .AddSpeed(Speed)
-                .AddVelocity(Velocity)
-                .AddDirection(Vector3.zero)
-                .AddPlayerAnimator(PlayerAnimator)
-                .With(x=>x.isPlayer = true)
-                .With(x=>x.isRotating = true)
+                    .Empty()
+                    .AddTransform(transform)
+                    .AddRotate(transform.rotation)
+                    .AddWorldPosition(transform.position)
+                    .AddSpeed(Speed)
+                    .AddDirection(Vector3.zero)
+                    .AddPlayerAnimator(PlayerAnimator)
+                    .With(x => x.isPlayer = true)
+                    .With(x => x.isRotating = true)
                 ;
         }
     }

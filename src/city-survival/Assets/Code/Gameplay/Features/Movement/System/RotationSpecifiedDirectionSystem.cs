@@ -11,17 +11,15 @@ namespace Code.Gameplay.Features.Movement.System
 
         public RotationSpecifiedDirectionSystem(GameContext gameContext)
         {
-             
-            _movers = gameContext.GetGroup(GameMatcher.
-                AllOf(
-                    GameMatcher.WorldPosition, 
-                    GameMatcher.Speed,
-                    GameMatcher.Velocity,
-                    GameMatcher.Direction,
-                    GameMatcher.Rotate,
-                    GameMatcher.Moving,
-                    GameMatcher.Rotating));
+            _movers = gameContext.GetGroup(GameMatcher.AllOf(
+                GameMatcher.WorldPosition,
+                GameMatcher.Speed,
+                GameMatcher.Direction,
+                GameMatcher.Rotate,
+                GameMatcher.Moving,
+                GameMatcher.Rotating));
         }
+
         public void Execute()
         {
             foreach (GameEntity mover in _movers)

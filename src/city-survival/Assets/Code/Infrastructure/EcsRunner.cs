@@ -1,4 +1,5 @@
 ﻿using Code.Gameplay;
+using Code.Gameplay.Cameras.Provider;
 using Code.Gameplay.Common.Time;
 using Code.Gameplay.Input.Service;
 using UnityEngine;
@@ -12,10 +13,12 @@ namespace Code.Infrastructure
         private ITimeService _time;
         private MainGameplayFeatures _mainGameplayFeatures;
         private IInputService _inputService;
+        private ICameraProvider _cameraProvider;
 
         [Inject]
-        private void Construct(GameContext gameContext, ITimeService time, IInputService inputService)
+        private void Construct(GameContext gameContext, ITimeService time, IInputService inputService,ICameraProvider cameraProvider)
         {
+            _cameraProvider = cameraProvider;
             _gameContext = gameContext;
             _time = time;
             _inputService = inputService;
@@ -23,7 +26,7 @@ namespace Code.Infrastructure
 
         private void Start()
         {
-            _mainGameplayFeatures = new MainGameplayFeatures(_gameContext, _time, _inputService);
+            _mainGameplayFeatures = new MainGameplayFeatures(_gameContext, _time, _inputService,_cameraProvider);
             _mainGameplayFeatures.Initialize();
         }
 
