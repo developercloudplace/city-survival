@@ -13,17 +13,18 @@ public static class GameComponentsLookup {
     public const int Test2 = 2;
     public const int Test = 3;
     public const int Transform = 4;
-    public const int WorldPosition = 5;
-    public const int Direction = 6;
-    public const int Moving = 7;
-    public const int Rotating = 8;
-    public const int Speed = 9;
-    public const int Player = 10;
-    public const int PlayerAnimator = 11;
-    public const int AxisInput = 12;
-    public const int Input = 13;
+    public const int Velocity = 5;
+    public const int WorldPosition = 6;
+    public const int Direction = 7;
+    public const int Moving = 8;
+    public const int Rotating = 9;
+    public const int Speed = 10;
+    public const int Player = 11;
+    public const int PlayerAnimator = 12;
+    public const int AxisInput = 13;
+    public const int Input = 14;
 
-    public const int TotalComponents = 14;
+    public const int TotalComponents = 15;
 
     public static readonly string[] componentNames = {
         "Id",
@@ -31,6 +32,7 @@ public static class GameComponentsLookup {
         "Test2",
         "Test",
         "Transform",
+        "Velocity",
         "WorldPosition",
         "Direction",
         "Moving",
@@ -48,6 +50,7 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Common.Test2Component),
         typeof(Code.Gameplay.Common.TestComponent),
         typeof(Code.Gameplay.Common.TransformComponent),
+        typeof(Code.Gameplay.Common.Velocity),
         typeof(Code.Gameplay.Common.WorldPosition),
         typeof(Code.Gameplay.Features.Movement.Direction),
         typeof(Code.Gameplay.Features.Movement.Moving),

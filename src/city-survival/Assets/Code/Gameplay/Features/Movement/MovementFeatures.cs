@@ -9,6 +9,8 @@ namespace Code.Gameplay.Features.Movement
         {
             Add(new DirectionDeltaMoveSystem(gameContext, time));
             Add(new UpdateTransformPositionSystem(gameContext));
+            Add(new RotationSpecifiedDirectionSystem(gameContext));
+            Add(new UpdateRotationSpecifiedDirectionSystem(gameContext));
         }
     }
 }

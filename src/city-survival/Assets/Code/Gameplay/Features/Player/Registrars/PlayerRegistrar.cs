@@ -10,6 +10,7 @@ namespace Code.Gameplay.Features.Player.Registrars
     public class PlayerRegistrar : MonoBehaviour
     {
         public float Speed;
+        public float Velocity;
         public PlayerAnimator PlayerAnimator;
         private GameEntity _entity;
 
@@ -21,6 +22,7 @@ namespace Code.Gameplay.Features.Player.Registrars
                 .AddRotate(transform.rotation)
                 .AddWorldPosition(transform.position)
                 .AddSpeed(Speed)
+                .AddVelocity(Velocity)
                 .AddDirection(Vector3.zero)
                 .AddPlayerAnimator(PlayerAnimator)
                 .With(x=>x.isPlayer = true)
