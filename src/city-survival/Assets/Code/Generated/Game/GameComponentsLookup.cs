@@ -8,25 +8,27 @@
 //------------------------------------------------------------------------------
 public static class GameComponentsLookup {
 
-    public const int Id = 0;
-    public const int Rotate = 1;
-    public const int Test2 = 2;
-    public const int Test = 3;
-    public const int Transform = 4;
-    public const int Velocity = 5;
-    public const int WorldPosition = 6;
-    public const int Direction = 7;
-    public const int Moving = 8;
-    public const int Rotating = 9;
-    public const int Speed = 10;
-    public const int Player = 11;
-    public const int PlayerAnimator = 12;
-    public const int AxisInput = 13;
-    public const int Input = 14;
+    public const int View = 0;
+    public const int Id = 1;
+    public const int Rotate = 2;
+    public const int Test2 = 3;
+    public const int Test = 4;
+    public const int Transform = 5;
+    public const int Velocity = 6;
+    public const int WorldPosition = 7;
+    public const int Direction = 8;
+    public const int Moving = 9;
+    public const int Rotating = 10;
+    public const int Speed = 11;
+    public const int Player = 12;
+    public const int PlayerAnimator = 13;
+    public const int AxisInput = 14;
+    public const int Input = 15;
 
-    public const int TotalComponents = 15;
+    public const int TotalComponents = 16;
 
     public static readonly string[] componentNames = {
+        "View",
         "Id",
         "Rotate",
         "Test2",
@@ -45,6 +47,7 @@ public static class GameComponentsLookup {
     };
 
     public static readonly System.Type[] componentTypes = {
+        typeof(Code.Common.View),
         typeof(Code.Gameplay.Common.Id),
         typeof(Code.Gameplay.Common.RotateComponent),
         typeof(Code.Gameplay.Common.Test2Component),

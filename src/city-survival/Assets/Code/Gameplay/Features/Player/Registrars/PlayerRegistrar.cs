@@ -10,7 +10,6 @@ namespace Code.Gameplay.Features.Player.Registrars
     public class PlayerRegistrar : MonoBehaviour
     {
         public float Speed;
-        public float Velocity;
         public PlayerAnimator PlayerAnimator;
         private GameEntity _entity;
 
