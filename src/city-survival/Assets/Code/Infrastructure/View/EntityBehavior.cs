@@ -7,6 +7,7 @@ namespace Code.Infrastructure.View
     {
         private GameEntity _entity;
         public GameEntity Entity { get; }
+        public GameObject gameObject { get; }
 
         public void SetEntity(GameEntity gameEntity)
         {
@@ -26,5 +27,6 @@ namespace Code.Infrastructure.View
             _entity.Release(this);
             _entity = null;
         }
+
     }
 }

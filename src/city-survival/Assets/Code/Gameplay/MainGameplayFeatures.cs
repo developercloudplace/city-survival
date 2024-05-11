@@ -1,4 +1,5 @@
-﻿using Code.Gameplay.Features.Movement;
+﻿using Code.Common.Destruct;
+using Code.Gameplay.Features.Movement;
 using Code.Gameplay.Features.Player;
 using Code.Gameplay.Input;
 using Code.Infrastructure.System;
@@ -12,6 +13,7 @@ namespace Code.Gameplay
             Add(systemFactory.Create<InputFeature>());
             Add(systemFactory.Create<PlayerFeatures>());
             Add(systemFactory.Create<MovementFeatures>());
+            Add(systemFactory.Create<ProcessDestructedFeature>());
         }
     }
 }
