@@ -8,9 +8,11 @@ using Code.Gameplay.Levels;
 using Code.Infrastructure.AssetManagement;
 using Code.Infrastructure.Identifiers;
 using Code.Infrastructure.Loading;
+using Code.Infrastructure.System;
 using Zenject;
+using NotImplementedException = System.NotImplementedException;
 
-namespace Code.Infrastructure
+namespace Code.Infrastructure.Installers
 {
     public class BootstrapInstaller : MonoInstaller, ICoroutineRunner, IInitializable
     {
@@ -19,10 +21,16 @@ namespace Code.Infrastructure
             BindInputService();
             BindInfrastructureServices();
             BindCommonService();
+            BindSystemFactory();
             BindCameraProvider();
             BindAssetManagerService();
             BindContext();
             BindGameplayService();
+        }
+
+        private void BindSystemFactory()
+        {
+            Container.Bind<ISystemFactory>().To<SystemFactory>().AsSingle();
         }
 
         private void BindContext()

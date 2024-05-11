@@ -1,7 +1,5 @@
 ﻿using Code.Gameplay;
-using Code.Gameplay.Cameras.Provider;
-using Code.Gameplay.Common.Time;
-using Code.Gameplay.Input.Service;
+using Code.Infrastructure.System;
 using UnityEngine;
 using Zenject;
 
@@ -9,24 +7,22 @@ namespace Code.Infrastructure
 {
     public class EcsRunner : MonoBehaviour
     {
-        private GameContext _gameContext;
-        private ITimeService _time;
+       // private GameContext _gameContext;
+       // private ITimeService _time;
+      //  private IInputService _inputService;
+      //  private ICameraProvider _cameraProvider;
         private MainGameplayFeatures _mainGameplayFeatures;
-        private IInputService _inputService;
-        private ICameraProvider _cameraProvider;
+        private ISystemFactory _systemFactory;
 
         [Inject]
-        private void Construct(GameContext gameContext, ITimeService time, IInputService inputService,ICameraProvider cameraProvider)
+        private void Construct(ISystemFactory systemFactory)
         {
-            _cameraProvider = cameraProvider;
-            _gameContext = gameContext;
-            _time = time;
-            _inputService = inputService;
+            _systemFactory = systemFactory;
         }
 
         private void Start()
         {
-            _mainGameplayFeatures = new MainGameplayFeatures(_gameContext, _time, _inputService,_cameraProvider);
+            _mainGameplayFeatures = _systemFactory.Create<MainGameplayFeatures>();
             _mainGameplayFeatures.Initialize();
         }
 

@@ -17,7 +17,7 @@ namespace Code.Infrastructure
       //      _windowFactory.SetUIRoot(UIRoot);
       public void Initialize()
       {
-        throw new System.NotImplementedException();
+      //  throw new System.NotImplementedException();
       }
     }
 }

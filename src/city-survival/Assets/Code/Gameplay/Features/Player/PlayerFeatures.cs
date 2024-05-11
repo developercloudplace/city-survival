@@ -1,16 +1,17 @@
 ﻿using Code.Gameplay.Cameras.Provider;
 using Code.Gameplay.Cameras.System;
 using Code.Gameplay.Features.Player.Systems;
+using Code.Infrastructure.System;
 
 namespace Code.Gameplay.Features.Player
 {
     public class PlayerFeatures : Feature
     {
-        public PlayerFeatures(GameContext gameContext,ICameraProvider cameraProvider)
+        public PlayerFeatures(ISystemFactory systemFactory)
         {
-            Add(new SetPlayerDirectionByInput(gameContext));
-            Add(new CameraFollowPlayerSystem(gameContext,cameraProvider));
-            Add(new AnimatePlayerMovementSystem(gameContext));
+            Add(systemFactory.Create<SetPlayerDirectionByInput>());
+            Add(systemFactory.Create<CameraFollowPlayerSystem>());
+            Add(systemFactory.Create<AnimatePlayerMovementSystem>());
         }
     }
 }
