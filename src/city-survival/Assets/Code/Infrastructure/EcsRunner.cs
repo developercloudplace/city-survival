@@ -7,10 +7,7 @@ namespace Code.Infrastructure
 {
     public class EcsRunner : MonoBehaviour
     {
-       // private GameContext _gameContext;
-       // private ITimeService _time;
-      //  private IInputService _inputService;
-      //  private ICameraProvider _cameraProvider;
+      
         private MainGameplayFeatures _mainGameplayFeatures;
         private ISystemFactory _systemFactory;
 
