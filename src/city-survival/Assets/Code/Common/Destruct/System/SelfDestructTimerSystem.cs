@@ -16,6 +16,7 @@ namespace Code.Common.Destruct.System
             _time = time;
             _entities = gameContext.GetGroup(GameMatcher.SelfDestructTimer);
         }
+        
 
 
         public void Execute()
