@@ -8,12 +8,12 @@ namespace Code.Infrastructure.View
     public class EntityBehavior : MonoBehaviour, IEntityView
     {
         private GameEntity _entity;
-        private ICollisionRegistry _collisionRegistry1;
+        private ICollisionRegistry _collisionRegistry;
         public GameEntity Entity => _entity;
 
         [Inject]
-        public void Construct(ICollisionRegistry _collisionRegistry) => 
-            _collisionRegistry1 = _collisionRegistry;
+        public void Construct(ICollisionRegistry collisionRegistry) =>
+            _collisionRegistry = collisionRegistry;
 
         public void SetEntity(GameEntity gameEntity)
         {
@@ -23,12 +23,16 @@ namespace Code.Infrastructure.View
 
             foreach (IEntityComponentRegistrar registrar in GetComponentsInChildren<IEntityComponentRegistrar>())
                 registrar.RegistrarComponent();
+            foreach (Collider collider in GetComponentsInChildren<Collider>(true))
+                _collisionRegistry.Register(collider.GetInstanceID(), _entity);
         }
 
         public void ReleaseEntity()
         {
             foreach (IEntityComponentRegistrar registrar in GetComponentsInChildren<IEntityComponentRegistrar>())
                 registrar.UnRegistrarComponent();
+            foreach (Collider collider in GetComponentsInChildren<Collider>(true))
+                _collisionRegistry.Unregister(collider.GetInstanceID());
 
             _entity.Release(this);
             _entity = null;
