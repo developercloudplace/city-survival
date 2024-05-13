@@ -8,7 +8,7 @@ namespace Code.Gameplay.Common
     [Game] public class TransformComponent: IComponent {public Transform Value;}
     [Game] public class RotateComponent: IComponent {public Quaternion Value;}
     [Game] public class Velocity: IComponent {public float Value;}
-    [Game] public class TestComponent: IComponent {public Vector3 Value;}
-    [Game] public class Test2Component: IComponent {public Vector3 Value;}
+    
+   
     
 } 
