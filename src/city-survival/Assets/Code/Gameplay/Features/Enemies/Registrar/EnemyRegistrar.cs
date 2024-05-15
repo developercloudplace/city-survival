@@ -12,7 +12,6 @@ namespace Code.Gameplay.Features.Enemies.Registrar
         public override void RegistrarComponent()
         {
             Entity
-                .AddTransform(transform)
                 .AddWorldPosition(transform.position)
                 .AddEnemyTypeId(EnemyTypeId.Zombie)
                 .AddSpeed(Speed)
