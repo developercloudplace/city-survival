@@ -1,31 +1,31 @@
-﻿using System;
-using Code.Common.Extensions;
-using Code.Gameplay.Features.Player.Behaviours;
+﻿using Code.Common.Extensions;
+using Code.Gameplay.Features.Enemies.Behaviours;
 using Code.Infrastructure.View.Registrars;
 using UnityEngine;
 
-namespace Code.Gameplay.Features.Player.Registrars
+namespace Code.Gameplay.Features.Enemies.Registrar
 {
-    //TODO : Temporary class for linking with MonoBehaviour
-    public class PlayerRegistrar : EntityComponentRegistrar
+    public class EnemyRegistrar: EntityComponentRegistrar
     {
         public float Speed;
-        public PlayerAnimator PlayerAnimator;
+        public EnemyAnimator EnemyAnimator;
         public override void RegistrarComponent()
         {
             Entity
+                .AddTransform(transform)
                 .AddWorldPosition(transform.position)
+                .AddEnemyTypeId(EnemyTypeId.Zombie)
                 .AddSpeed(Speed)
                 .AddDirection(Vector3.zero)
-                .AddPlayerAnimator(PlayerAnimator)
-                .With(x => x.isPlayer = true)
+                .AddEnemyAnimator(EnemyAnimator)
+                .With(x => x.isEnemy = true)
                 .With(x => x.isRotating = true)
                 ;
         }
 
         public override void UnRegistrarComponent()
         {
-            throw new NotImplementedException();
+            
         }
     }
 }

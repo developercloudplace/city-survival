@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Code.Gameplay.Features.Enemies;
+
 public static class GameComponentsLookup {
 
     public const int Destructed = 0;
@@ -16,16 +19,20 @@ public static class GameComponentsLookup {
     public const int Transform = 5;
     public const int Velocity = 6;
     public const int WorldPosition = 7;
-    public const int Direction = 8;
-    public const int Moving = 9;
-    public const int Rotating = 10;
-    public const int Speed = 11;
-    public const int Player = 12;
-    public const int PlayerAnimator = 13;
-    public const int AxisInput = 14;
-    public const int Input = 15;
+    public const int Enemy = 8;
+    public const int EnemyAnimator = 9;
+    public const int EnemyTypeId = 10;
+    public const int SpawnTimer = 11;
+    public const int Direction = 12;
+    public const int Moving = 13;
+    public const int Rotating = 14;
+    public const int Speed = 15;
+    public const int Player = 16;
+    public const int PlayerAnimator = 17;
+    public const int AxisInput = 18;
+    public const int Input = 19;
 
-    public const int TotalComponents = 16;
+    public const int TotalComponents = 20;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -36,6 +43,10 @@ public static class GameComponentsLookup {
         "Transform",
         "Velocity",
         "WorldPosition",
+        "Enemy",
+        "EnemyAnimator",
+        "EnemyTypeId",
+        "SpawnTimer",
         "Direction",
         "Moving",
         "Rotating",
@@ -55,6 +66,10 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Common.TransformComponent),
         typeof(Code.Gameplay.Common.Velocity),
         typeof(Code.Gameplay.Common.WorldPosition),
+        typeof(Enemy),
+        typeof(EnemyAnimatorComponent),
+        typeof(EnemyTypeIdComponent),
+        typeof(SpawnTimer),
         typeof(Code.Gameplay.Features.Movement.Direction),
         typeof(Code.Gameplay.Features.Movement.Moving),
         typeof(Code.Gameplay.Features.Movement.Rotating),
