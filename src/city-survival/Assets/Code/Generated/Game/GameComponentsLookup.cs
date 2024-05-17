@@ -11,36 +11,38 @@ public static class GameComponentsLookup {
     public const int Destructed = 0;
     public const int SelfDestructTimer = 1;
     public const int View = 2;
-    public const int Id = 3;
-    public const int Rotate = 4;
-    public const int Transform = 5;
-    public const int Velocity = 6;
-    public const int WorldPosition = 7;
-    public const int Enemy = 8;
-    public const int EnemyAnimator = 9;
-    public const int EnemyTypeId = 10;
-    public const int SpawnTimer = 11;
-    public const int Direction = 12;
-    public const int Moving = 13;
-    public const int Rotating = 14;
-    public const int Speed = 15;
-    public const int Player = 16;
-    public const int PlayerAnimator = 17;
-    public const int CollectTargetsInterval = 18;
-    public const int CollectTargetsTimer = 19;
-    public const int LayerMask = 20;
-    public const int Radius = 21;
-    public const int ReadyToCollectTargets = 22;
-    public const int TargetBuffer = 23;
-    public const int AxisInput = 24;
-    public const int Input = 25;
+    public const int Damage = 3;
+    public const int Id = 4;
+    public const int Rotate = 5;
+    public const int Transform = 6;
+    public const int Velocity = 7;
+    public const int WorldPosition = 8;
+    public const int Enemy = 9;
+    public const int EnemyAnimator = 10;
+    public const int EnemyTypeId = 11;
+    public const int SpawnTimer = 12;
+    public const int Direction = 13;
+    public const int Moving = 14;
+    public const int Rotating = 15;
+    public const int Speed = 16;
+    public const int Player = 17;
+    public const int PlayerAnimator = 18;
+    public const int CollectTargetsInterval = 19;
+    public const int CollectTargetsTimer = 20;
+    public const int LayerMask = 21;
+    public const int Radius = 22;
+    public const int ReadyToCollectTargets = 23;
+    public const int TargetBuffer = 24;
+    public const int AxisInput = 25;
+    public const int Input = 26;
 
-    public const int TotalComponents = 26;
+    public const int TotalComponents = 27;
 
     public static readonly string[] componentNames = {
         "Destructed",
         "SelfDestructTimer",
         "View",
+        "Damage",
         "Id",
         "Rotate",
         "Transform",
@@ -70,6 +72,7 @@ public static class GameComponentsLookup {
         typeof(Code.Common.Destructed),
         typeof(Code.Common.SelfDestructTimer),
         typeof(Code.Common.View),
+        typeof(Code.Gameplay.Common.Damage),
         typeof(Code.Gameplay.Common.Id),
         typeof(Code.Gameplay.Common.RotateComponent),
         typeof(Code.Gameplay.Common.TransformComponent),

@@ -9,25 +9,26 @@ namespace Code.Gameplay.Features.TargetCollection.Systems
     {
         private readonly IGroup<GameEntity> _entities;
         private readonly IPhysicsService _physicsService;
+        private readonly List<GameEntity> _buffer = new List<GameEntity>(64);
 
         public CastForTargetsSystem(GameContext gameContext, IPhysicsService physicsService)
         {
             _physicsService = physicsService;
             _entities = gameContext.GetGroup(GameMatcher
                 .AllOf(
+                    GameMatcher.ReadyToCollectTargets,
                     GameMatcher.TargetBuffer,
                     GameMatcher.WorldPosition,
                     GameMatcher.Radius,
                     GameMatcher.LayerMask));
-            // GameMatcher.CollectTargetsTimer,
-            // GameMatcher.CollectTargetsInterval));
         }
 
         public void Execute()
         {
-            foreach (GameEntity entity in _entities)
+            foreach (GameEntity entity in _entities.GetEntities(_buffer))
             {
                 entity.TargetBuffer.AddRange(TargetInRadius(entity));
+                entity.isReadyToCollectTargets = false;
             }
         }
 

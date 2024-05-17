@@ -2,6 +2,7 @@
 using Code.Gameplay.Features.Enemies;
 using Code.Gameplay.Features.Movement;
 using Code.Gameplay.Features.Player;
+using Code.Gameplay.Features.TargetCollection;
 using Code.Gameplay.Input;
 using Code.Infrastructure.System;
 
@@ -16,6 +17,7 @@ namespace Code.Gameplay
             Add(systemFactory.Create<EnemyFeatures>());
             Add(systemFactory.Create<MovementFeatures>());
             Add(systemFactory.Create<ProcessDestructedFeature>());
+            Add(systemFactory.Create<CollectTargetsFeature>());
         }
     }
 }
