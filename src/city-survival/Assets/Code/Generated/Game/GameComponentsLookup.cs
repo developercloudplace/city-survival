@@ -28,11 +28,14 @@ public static class GameComponentsLookup {
     public const int PlayerAnimator = 17;
     public const int CollectTargetsInterval = 18;
     public const int CollectTargetsTimer = 19;
-    public const int TargetBuffer = 20;
-    public const int AxisInput = 21;
-    public const int Input = 22;
+    public const int LayerMask = 20;
+    public const int Radius = 21;
+    public const int ReadyToCollectTargets = 22;
+    public const int TargetBuffer = 23;
+    public const int AxisInput = 24;
+    public const int Input = 25;
 
-    public const int TotalComponents = 23;
+    public const int TotalComponents = 26;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -55,6 +58,9 @@ public static class GameComponentsLookup {
         "PlayerAnimator",
         "CollectTargetsInterval",
         "CollectTargetsTimer",
+        "LayerMask",
+        "Radius",
+        "ReadyToCollectTargets",
         "TargetBuffer",
         "AxisInput",
         "Input"
@@ -81,6 +87,9 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Player.Systems.PlayerAnimatorComponent),
         typeof(Code.Gameplay.Features.TargetCollection.CollectTargetsInterval),
         typeof(Code.Gameplay.Features.TargetCollection.CollectTargetsTimer),
+        typeof(Code.Gameplay.Features.TargetCollection.LayerMask),
+        typeof(Code.Gameplay.Features.TargetCollection.Radius),
+        typeof(Code.Gameplay.Features.TargetCollection.ReadyToCollectTargets),
         typeof(Code.Gameplay.Features.TargetCollection.TargetBuffer),
         typeof(Code.Gameplay.Input.System.AxisInput),
         typeof(Code.Gameplay.Input.System.Input)
