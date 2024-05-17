@@ -6,9 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Code.Gameplay.Features.Enemies;
-
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherSpawnTimer;
@@ -36,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public SpawnTimer spawnTimer { get { return (SpawnTimer)GetComponent(GameComponentsLookup.SpawnTimer); } }
+    public Code.Gameplay.Features.Enemies.SpawnTimer spawnTimer { get { return (Code.Gameplay.Features.Enemies.SpawnTimer)GetComponent(GameComponentsLookup.SpawnTimer); } }
     public float SpawnTimer { get { return spawnTimer.Value; } }
     public bool hasSpawnTimer { get { return HasComponent(GameComponentsLookup.SpawnTimer); } }
 
     public GameEntity AddSpawnTimer(float newValue) {
         var index = GameComponentsLookup.SpawnTimer;
-        var component = (SpawnTimer)CreateComponent(index, typeof(SpawnTimer));
+        var component = (Code.Gameplay.Features.Enemies.SpawnTimer)CreateComponent(index, typeof(Code.Gameplay.Features.Enemies.SpawnTimer));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -50,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceSpawnTimer(float newValue) {
         var index = GameComponentsLookup.SpawnTimer;
-        var component = (SpawnTimer)CreateComponent(index, typeof(SpawnTimer));
+        var component = (Code.Gameplay.Features.Enemies.SpawnTimer)CreateComponent(index, typeof(Code.Gameplay.Features.Enemies.SpawnTimer));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

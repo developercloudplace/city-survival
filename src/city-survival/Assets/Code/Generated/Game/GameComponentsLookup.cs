@@ -6,9 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Code.Gameplay.Features.Enemies;
-
 public static class GameComponentsLookup {
 
     public const int Destructed = 0;
@@ -29,10 +26,13 @@ public static class GameComponentsLookup {
     public const int Speed = 15;
     public const int Player = 16;
     public const int PlayerAnimator = 17;
-    public const int AxisInput = 18;
-    public const int Input = 19;
+    public const int CollectTargetsInterval = 18;
+    public const int CollectTargetsTimer = 19;
+    public const int TargetBuffer = 20;
+    public const int AxisInput = 21;
+    public const int Input = 22;
 
-    public const int TotalComponents = 20;
+    public const int TotalComponents = 23;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -53,6 +53,9 @@ public static class GameComponentsLookup {
         "Speed",
         "Player",
         "PlayerAnimator",
+        "CollectTargetsInterval",
+        "CollectTargetsTimer",
+        "TargetBuffer",
         "AxisInput",
         "Input"
     };
@@ -66,16 +69,19 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Common.TransformComponent),
         typeof(Code.Gameplay.Common.Velocity),
         typeof(Code.Gameplay.Common.WorldPosition),
-        typeof(Enemy),
-        typeof(EnemyAnimatorComponent),
-        typeof(EnemyTypeIdComponent),
-        typeof(SpawnTimer),
+        typeof(Code.Gameplay.Features.Enemies.Enemy),
+        typeof(Code.Gameplay.Features.Enemies.EnemyAnimatorComponent),
+        typeof(Code.Gameplay.Features.Enemies.EnemyTypeIdComponent),
+        typeof(Code.Gameplay.Features.Enemies.SpawnTimer),
         typeof(Code.Gameplay.Features.Movement.Direction),
         typeof(Code.Gameplay.Features.Movement.Moving),
         typeof(Code.Gameplay.Features.Movement.Rotating),
         typeof(Code.Gameplay.Features.Movement.Speed),
         typeof(Code.Gameplay.Features.Player.Systems.Player),
         typeof(Code.Gameplay.Features.Player.Systems.PlayerAnimatorComponent),
+        typeof(Code.Gameplay.Features.TargetCollection.CollectTargetsInterval),
+        typeof(Code.Gameplay.Features.TargetCollection.CollectTargetsTimer),
+        typeof(Code.Gameplay.Features.TargetCollection.TargetBuffer),
         typeof(Code.Gameplay.Input.System.AxisInput),
         typeof(Code.Gameplay.Input.System.Input)
     };
