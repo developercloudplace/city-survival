@@ -12,37 +12,41 @@ public static class GameComponentsLookup {
     public const int SelfDestructTimer = 1;
     public const int View = 2;
     public const int Damage = 3;
-    public const int Id = 4;
-    public const int Rotate = 5;
-    public const int Transform = 6;
-    public const int Velocity = 7;
-    public const int WorldPosition = 8;
-    public const int Enemy = 9;
-    public const int EnemyAnimator = 10;
-    public const int EnemyTypeId = 11;
-    public const int SpawnTimer = 12;
-    public const int Direction = 13;
-    public const int Moving = 14;
-    public const int Rotating = 15;
-    public const int Speed = 16;
-    public const int Player = 17;
-    public const int PlayerAnimator = 18;
-    public const int CollectTargetsInterval = 19;
-    public const int CollectTargetsTimer = 20;
-    public const int LayerMask = 21;
-    public const int Radius = 22;
-    public const int ReadyToCollectTargets = 23;
-    public const int TargetBuffer = 24;
-    public const int AxisInput = 25;
-    public const int Input = 26;
+    public const int DamageTaken = 4;
+    public const int Id = 5;
+    public const int Rotate = 6;
+    public const int Transform = 7;
+    public const int Velocity = 8;
+    public const int WorldPosition = 9;
+    public const int Enemy = 10;
+    public const int EnemyAnimator = 11;
+    public const int EnemyTypeId = 12;
+    public const int SpawnTimer = 13;
+    public const int CurrentXp = 14;
+    public const int MaxXp = 15;
+    public const int Direction = 16;
+    public const int Moving = 17;
+    public const int Rotating = 18;
+    public const int Speed = 19;
+    public const int Player = 20;
+    public const int PlayerAnimator = 21;
+    public const int CollectTargetsInterval = 22;
+    public const int CollectTargetsTimer = 23;
+    public const int LayerMask = 24;
+    public const int Radius = 25;
+    public const int ReadyToCollectTargets = 26;
+    public const int TargetBuffer = 27;
+    public const int AxisInput = 28;
+    public const int Input = 29;
 
-    public const int TotalComponents = 27;
+    public const int TotalComponents = 30;
 
     public static readonly string[] componentNames = {
         "Destructed",
         "SelfDestructTimer",
         "View",
         "Damage",
+        "DamageTaken",
         "Id",
         "Rotate",
         "Transform",
@@ -52,6 +56,8 @@ public static class GameComponentsLookup {
         "EnemyAnimator",
         "EnemyTypeId",
         "SpawnTimer",
+        "CurrentXp",
+        "MaxXp",
         "Direction",
         "Moving",
         "Rotating",
@@ -73,6 +79,7 @@ public static class GameComponentsLookup {
         typeof(Code.Common.SelfDestructTimer),
         typeof(Code.Common.View),
         typeof(Code.Gameplay.Common.Damage),
+        typeof(Code.Gameplay.Common.DamageTakenComponent),
         typeof(Code.Gameplay.Common.Id),
         typeof(Code.Gameplay.Common.RotateComponent),
         typeof(Code.Gameplay.Common.TransformComponent),
@@ -82,6 +89,8 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Enemies.EnemyAnimatorComponent),
         typeof(Code.Gameplay.Features.Enemies.EnemyTypeIdComponent),
         typeof(Code.Gameplay.Features.Enemies.SpawnTimer),
+        typeof(Code.Gameplay.Features.LifeTime.LifeTimeComponents.CurrentXp),
+        typeof(Code.Gameplay.Features.LifeTime.LifeTimeComponents.MaxXp),
         typeof(Code.Gameplay.Features.Movement.Direction),
         typeof(Code.Gameplay.Features.Movement.Moving),
         typeof(Code.Gameplay.Features.Movement.Rotating),
