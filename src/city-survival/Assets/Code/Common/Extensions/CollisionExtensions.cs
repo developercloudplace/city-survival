@@ -4,7 +4,7 @@ namespace Code.Common.Extensions
 {
   public enum CollisionLayer
   {
-    Hero = 6,
+    Player = 6,
     Enemy = 7,
     Collectable = 9,
     Clicker = 10,

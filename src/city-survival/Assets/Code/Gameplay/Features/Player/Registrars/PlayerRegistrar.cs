@@ -10,12 +10,16 @@ namespace Code.Gameplay.Features.Player.Registrars
     public class PlayerRegistrar : EntityComponentRegistrar
     {
         public float Speed;
+        public int MaxHp = 100;
         public PlayerAnimator PlayerAnimator;
         public override void RegistrarComponent()
         {
             Entity
                 .AddWorldPosition(transform.position)
+                .AddCurrentXp(MaxHp)
+                .AddMaxXp(MaxHp)
                 .AddSpeed(Speed)
+                .AddDamageTakenAnimator(PlayerAnimator)
                 .AddDirection(Vector3.zero)
                 .AddPlayerAnimator(PlayerAnimator)
                 .With(x => x.isPlayer = true)

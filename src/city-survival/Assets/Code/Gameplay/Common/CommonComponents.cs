@@ -11,5 +11,5 @@ namespace Code.Gameplay.Common
     [Game] public class RotateComponent: IComponent {public Quaternion Value;}
     [Game] public class Velocity: IComponent {public float Value;}
     [Game] public class Damage: IComponent {public float Value;}
-    [Game] public class DamageTakenComponent: IComponent {public IDamageTakenAnimator  Value;}
+    [Game] public class DamageTakenAnimatorComponent: IComponent {public IDamageTakenAnimator  Value;}
 } 

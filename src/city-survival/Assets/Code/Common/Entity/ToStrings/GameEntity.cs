@@ -2,6 +2,8 @@
 using System.Linq;
 using System.Text;
 using Code.Common.Entity.ToStrings;
+using Code.Gameplay.Features.Enemies;
+using Code.Gameplay.Features.Player.Systems;
 //using Code.Common.Extensions;
 //using Code.Gameplay.Features.Enemies;
 //using Code.Gameplay.Features.Hero;
@@ -9,7 +11,7 @@ using Entitas;
 using UnityEngine;
 
 // ReSharper disable once CheckNamespace
-public sealed partial class GameEntity : INamedEntity
+public sealed partial class   GameEntity : INamedEntity
 {
   private EntityPrinter _printer;
 
@@ -34,11 +36,11 @@ public sealed partial class GameEntity : INamedEntity
       {
         switch (component.GetType().Name)
         {
-         // case nameof(Hero):
-         //   return PrintHero();
-//
-         // case nameof(Enemy):
-         //   return PrintEnemy();
+           case nameof(Player):
+             return PrintPlayer();
+          
+           case nameof(Enemy):
+             return PrintEnemy();
         }
       }
     }
@@ -50,9 +52,9 @@ public sealed partial class GameEntity : INamedEntity
     return components.First().GetType().Name;
   }
 
-  private string PrintHero()
+  private string PrintPlayer()
   {
-    return new StringBuilder($"Hero ")
+    return new StringBuilder($"Player ")
    //   .With(s => s.Append($"Id:{Id}"), when: hasId)
       .ToString();
   }

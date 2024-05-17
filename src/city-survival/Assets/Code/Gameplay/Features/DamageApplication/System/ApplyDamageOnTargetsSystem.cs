@@ -12,7 +12,7 @@ namespace Code.Gameplay.Features.DamageApplication.System
             _gameContext = gameContext;
             _damageDealers = gameContext.GetGroup(GameMatcher
                 .AllOf(
-                    GameMatcher.DamageTaken,
+                    GameMatcher.DamageTakenAnimator,
                     GameMatcher.Damage));
         }
 
@@ -27,7 +27,7 @@ namespace Code.Gameplay.Features.DamageApplication.System
                     target.ReplaceCurrentXp(target.CurrentXp - damageDealer.Damage);
                     if (target.hasDamage)
                     {
-                        target.DamageTaken.PlayDamageTaken();
+                        target.DamageTakenAnimator.PlayDamageTaken();
                     }
                 }
             }
