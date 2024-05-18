@@ -1,4 +1,5 @@
 ﻿using Code.Gameplay.Common.Visuals;
+using Unity.Mathematics;
 using UnityEngine;
 
 namespace Code.Gameplay.Features.Player.Behaviours
@@ -11,13 +12,16 @@ namespace Code.Gameplay.Features.Player.Behaviours
         private readonly int _diedHash = Animator.StringToHash("died");
 
         public Animator Animator;
+        public Transform point;
+        public GameObject fx;
 
         public void PlayMove() => Animator.SetBool(_isMovingHash, true);
         public void PlayIdle() => Animator.SetBool(_isMovingHash, false);
 
         public void PlayDamageTaken()
         {
-            Animator.SetTrigger(_takeDamageHash);
+            var go =  Instantiate(fx,point.position, quaternion.identity );
+            Destroy(go,.3f);
         }
 
         public void PlayAttack() => Animator.SetTrigger(_attackHash);

@@ -25,7 +25,7 @@ namespace Code.Gameplay.Features.DamageApplication.System
                 if (target.hasCurrentXp)
                 {
                     target.ReplaceCurrentXp(target.CurrentXp - damageDealer.Damage);
-                    if (target.hasDamage)
+                    if (target.hasDamageTakenAnimator)
                     {
                         target.DamageTakenAnimator.PlayDamageTaken();
                     }
