@@ -8,8 +8,7 @@ namespace Code.Common.Destruct.System
     public class CleanupGameDestructedViewSystem : ICleanupSystem
     {
         private readonly IGroup<GameEntity> _entities;
-        private readonly List<GameEntity> _buffer = new(64);
-
+        
         public CleanupGameDestructedViewSystem(GameContext gameContext)
         {
             _entities = gameContext.GetGroup(GameMatcher.AllOf(

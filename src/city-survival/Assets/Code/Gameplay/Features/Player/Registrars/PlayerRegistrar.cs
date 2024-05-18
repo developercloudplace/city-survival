@@ -29,7 +29,11 @@ namespace Code.Gameplay.Features.Player.Registrars
 
         public override void UnRegistrarComponent()
         {
-            throw new NotImplementedException();
+            if (Entity.hasPlayerAnimator)
+                Entity.RemovePlayerAnimator();
+            if (Entity.hasDamageTakenAnimator) 
+                Entity.RemoveDamageTakenAnimator();
+
         }
     }
 }

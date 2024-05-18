@@ -38,6 +38,10 @@ namespace Code.Gameplay.Features.Enemies.Registrar
 
         public override void UnRegistrarComponent()
         {
+            if (Entity.hasPlayerAnimator)
+                Entity.RemoveEnemyAnimator();
+            if (Entity.hasDamageTakenAnimator) 
+                Entity.RemoveDamageTakenAnimator();
         }
     }
 }
