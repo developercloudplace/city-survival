@@ -34,6 +34,7 @@ namespace Code.Gameplay.Features.Enemies.Registrar
                 .AddEnemyAnimator(EnemyAnimator)
                 .With(x => x.isEnemy = true)
                 .With(x => x.isRotating = true)
+                .With(x => x.isMovementAvailable = true)
                 ;
         }
 

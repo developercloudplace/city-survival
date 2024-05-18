@@ -24,9 +24,9 @@ namespace Code.Gameplay.Features.Player.Behaviours
             Destroy(go,.3f);
         }
 
+        public void PlayDied() => Animator.SetTrigger(_diedHash);
         public void PlayAttack() => Animator.SetTrigger(_attackHash);
 
-        public void PlayDied() => Animator.SetTrigger(_diedHash);
 
 
         public void ResetAll()

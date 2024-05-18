@@ -12,6 +12,8 @@ namespace Code.Gameplay.Features.Player
             Add(systemFactory.Create<SetPlayerDirectionByInput>());
             Add(systemFactory.Create<CameraFollowPlayerSystem>());
             Add(systemFactory.Create<AnimatePlayerMovementSystem>());
+            Add(systemFactory.Create<PlayerDeathSystem>());
+            Add(systemFactory.Create<FinalizePlayerDeathProcessingSystem>());
         }
     }
 }

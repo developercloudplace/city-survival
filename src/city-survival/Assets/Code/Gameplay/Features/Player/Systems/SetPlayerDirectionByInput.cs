@@ -9,8 +9,11 @@ namespace Code.Gameplay.Features.Player.Systems
 
         public SetPlayerDirectionByInput(GameContext gameContext)
         {
-            _players = gameContext.GetGroup(GameMatcher.Player);
             _inputs = gameContext.GetGroup(GameMatcher.Input);
+            _players = gameContext.GetGroup(GameMatcher
+                .AllOf(
+                    GameMatcher.Player,
+                    GameMatcher.MovementAvailable));
         }
         public void Execute()
         {

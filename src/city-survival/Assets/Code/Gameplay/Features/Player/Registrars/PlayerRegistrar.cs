@@ -24,6 +24,7 @@ namespace Code.Gameplay.Features.Player.Registrars
                 .AddPlayerAnimator(PlayerAnimator)
                 .With(x => x.isPlayer = true)
                 .With(x => x.isRotating = true)
+                .With(x => x.isMovementAvailable = true)
                 ;
         }
 

@@ -27,21 +27,22 @@ public static class GameComponentsLookup {
     public const int MaxXp = 16;
     public const int ProcessingDeath = 17;
     public const int Direction = 18;
-    public const int Moving = 19;
-    public const int Rotating = 20;
-    public const int Speed = 21;
-    public const int Player = 22;
-    public const int PlayerAnimator = 23;
-    public const int CollectTargetsInterval = 24;
-    public const int CollectTargetsTimer = 25;
-    public const int LayerMask = 26;
-    public const int Radius = 27;
-    public const int ReadyToCollectTargets = 28;
-    public const int TargetBuffer = 29;
-    public const int AxisInput = 30;
-    public const int Input = 31;
+    public const int MovementAvailable = 19;
+    public const int Moving = 20;
+    public const int Rotating = 21;
+    public const int Speed = 22;
+    public const int Player = 23;
+    public const int PlayerAnimator = 24;
+    public const int CollectTargetsInterval = 25;
+    public const int CollectTargetsTimer = 26;
+    public const int LayerMask = 27;
+    public const int Radius = 28;
+    public const int ReadyToCollectTargets = 29;
+    public const int TargetBuffer = 30;
+    public const int AxisInput = 31;
+    public const int Input = 32;
 
-    public const int TotalComponents = 32;
+    public const int TotalComponents = 33;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -63,6 +64,7 @@ public static class GameComponentsLookup {
         "MaxXp",
         "ProcessingDeath",
         "Direction",
+        "MovementAvailable",
         "Moving",
         "Rotating",
         "Speed",
@@ -98,6 +100,7 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.LifeTime.MaxXp),
         typeof(Code.Gameplay.Features.LifeTime.ProcessingDeath),
         typeof(Code.Gameplay.Features.Movement.Direction),
+        typeof(Code.Gameplay.Features.Movement.MovementAvailable),
         typeof(Code.Gameplay.Features.Movement.Moving),
         typeof(Code.Gameplay.Features.Movement.Rotating),
         typeof(Code.Gameplay.Features.Movement.Speed),

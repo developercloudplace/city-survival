@@ -9,6 +9,8 @@ namespace Code.Gameplay.Features.Enemies
         {
             Add(systemFactory.Create<EnemyChaseHeroSystem>());
             Add(systemFactory.Create<EnemyDeathSystem>());
+            
+            Add(systemFactory.Create<FinalizeEnemyDeathProcessingSystem>());
         }
     }
 }
