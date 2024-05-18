@@ -33,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Code.Gameplay.Features.LifeTime.LifeTimeComponents.CurrentXp currentXp { get { return (Code.Gameplay.Features.LifeTime.LifeTimeComponents.CurrentXp)GetComponent(GameComponentsLookup.CurrentXp); } }
+    public Code.Gameplay.Features.LifeTime.CurrentXp currentXp { get { return (Code.Gameplay.Features.LifeTime.CurrentXp)GetComponent(GameComponentsLookup.CurrentXp); } }
     public float CurrentXp { get { return currentXp.Value; } }
     public bool hasCurrentXp { get { return HasComponent(GameComponentsLookup.CurrentXp); } }
 
     public GameEntity AddCurrentXp(float newValue) {
         var index = GameComponentsLookup.CurrentXp;
-        var component = (Code.Gameplay.Features.LifeTime.LifeTimeComponents.CurrentXp)CreateComponent(index, typeof(Code.Gameplay.Features.LifeTime.LifeTimeComponents.CurrentXp));
+        var component = (Code.Gameplay.Features.LifeTime.CurrentXp)CreateComponent(index, typeof(Code.Gameplay.Features.LifeTime.CurrentXp));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceCurrentXp(float newValue) {
         var index = GameComponentsLookup.CurrentXp;
-        var component = (Code.Gameplay.Features.LifeTime.LifeTimeComponents.CurrentXp)CreateComponent(index, typeof(Code.Gameplay.Features.LifeTime.LifeTimeComponents.CurrentXp));
+        var component = (Code.Gameplay.Features.LifeTime.CurrentXp)CreateComponent(index, typeof(Code.Gameplay.Features.LifeTime.CurrentXp));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

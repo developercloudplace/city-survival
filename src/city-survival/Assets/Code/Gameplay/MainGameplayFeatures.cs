@@ -1,6 +1,7 @@
 ﻿using Code.Common.Destruct;
 using Code.Gameplay.Features.DamageApplication;
 using Code.Gameplay.Features.Enemies;
+using Code.Gameplay.Features.LifeTime;
 using Code.Gameplay.Features.Movement;
 using Code.Gameplay.Features.Player;
 using Code.Gameplay.Features.TargetCollection;
@@ -20,6 +21,7 @@ namespace Code.Gameplay
             Add(systemFactory.Create<CollectTargetsFeature>());
             Add(systemFactory.Create<DamageApplicationFeatures>());
             Add(systemFactory.Create<ProcessDestructedFeature>());
+            Add(systemFactory.Create<DeadFeature>());
         }
     }
 }

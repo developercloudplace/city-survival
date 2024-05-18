@@ -23,23 +23,25 @@ public static class GameComponentsLookup {
     public const int EnemyTypeId = 12;
     public const int SpawnTimer = 13;
     public const int CurrentXp = 14;
-    public const int MaxXp = 15;
-    public const int Direction = 16;
-    public const int Moving = 17;
-    public const int Rotating = 18;
-    public const int Speed = 19;
-    public const int Player = 20;
-    public const int PlayerAnimator = 21;
-    public const int CollectTargetsInterval = 22;
-    public const int CollectTargetsTimer = 23;
-    public const int LayerMask = 24;
-    public const int Radius = 25;
-    public const int ReadyToCollectTargets = 26;
-    public const int TargetBuffer = 27;
-    public const int AxisInput = 28;
-    public const int Input = 29;
+    public const int Dead = 15;
+    public const int MaxXp = 16;
+    public const int ProcessingDeath = 17;
+    public const int Direction = 18;
+    public const int Moving = 19;
+    public const int Rotating = 20;
+    public const int Speed = 21;
+    public const int Player = 22;
+    public const int PlayerAnimator = 23;
+    public const int CollectTargetsInterval = 24;
+    public const int CollectTargetsTimer = 25;
+    public const int LayerMask = 26;
+    public const int Radius = 27;
+    public const int ReadyToCollectTargets = 28;
+    public const int TargetBuffer = 29;
+    public const int AxisInput = 30;
+    public const int Input = 31;
 
-    public const int TotalComponents = 30;
+    public const int TotalComponents = 32;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -57,7 +59,9 @@ public static class GameComponentsLookup {
         "EnemyTypeId",
         "SpawnTimer",
         "CurrentXp",
+        "Dead",
         "MaxXp",
+        "ProcessingDeath",
         "Direction",
         "Moving",
         "Rotating",
@@ -89,8 +93,10 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Enemies.EnemyAnimatorComponent),
         typeof(Code.Gameplay.Features.Enemies.EnemyTypeIdComponent),
         typeof(Code.Gameplay.Features.Enemies.SpawnTimer),
-        typeof(Code.Gameplay.Features.LifeTime.LifeTimeComponents.CurrentXp),
-        typeof(Code.Gameplay.Features.LifeTime.LifeTimeComponents.MaxXp),
+        typeof(Code.Gameplay.Features.LifeTime.CurrentXp),
+        typeof(Code.Gameplay.Features.LifeTime.Dead),
+        typeof(Code.Gameplay.Features.LifeTime.MaxXp),
+        typeof(Code.Gameplay.Features.LifeTime.ProcessingDeath),
         typeof(Code.Gameplay.Features.Movement.Direction),
         typeof(Code.Gameplay.Features.Movement.Moving),
         typeof(Code.Gameplay.Features.Movement.Rotating),

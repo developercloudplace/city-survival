@@ -33,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Code.Gameplay.Features.LifeTime.LifeTimeComponents.MaxXp maxXp { get { return (Code.Gameplay.Features.LifeTime.LifeTimeComponents.MaxXp)GetComponent(GameComponentsLookup.MaxXp); } }
+    public Code.Gameplay.Features.LifeTime.MaxXp maxXp { get { return (Code.Gameplay.Features.LifeTime.MaxXp)GetComponent(GameComponentsLookup.MaxXp); } }
     public float MaxXp { get { return maxXp.Value; } }
     public bool hasMaxXp { get { return HasComponent(GameComponentsLookup.MaxXp); } }
 
     public GameEntity AddMaxXp(float newValue) {
         var index = GameComponentsLookup.MaxXp;
-        var component = (Code.Gameplay.Features.LifeTime.LifeTimeComponents.MaxXp)CreateComponent(index, typeof(Code.Gameplay.Features.LifeTime.LifeTimeComponents.MaxXp));
+        var component = (Code.Gameplay.Features.LifeTime.MaxXp)CreateComponent(index, typeof(Code.Gameplay.Features.LifeTime.MaxXp));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceMaxXp(float newValue) {
         var index = GameComponentsLookup.MaxXp;
-        var component = (Code.Gameplay.Features.LifeTime.LifeTimeComponents.MaxXp)CreateComponent(index, typeof(Code.Gameplay.Features.LifeTime.LifeTimeComponents.MaxXp));
+        var component = (Code.Gameplay.Features.LifeTime.MaxXp)CreateComponent(index, typeof(Code.Gameplay.Features.LifeTime.MaxXp));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;
