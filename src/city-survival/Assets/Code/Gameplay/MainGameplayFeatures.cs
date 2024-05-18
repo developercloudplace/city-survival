@@ -17,9 +17,9 @@ namespace Code.Gameplay
             Add(systemFactory.Create<PlayerFeatures>());
             Add(systemFactory.Create<EnemyFeatures>());
             Add(systemFactory.Create<MovementFeatures>());
-            Add(systemFactory.Create<ProcessDestructedFeature>());
             Add(systemFactory.Create<CollectTargetsFeature>());
             Add(systemFactory.Create<DamageApplicationFeatures>());
+            Add(systemFactory.Create<ProcessDestructedFeature>());
         }
     }
 }

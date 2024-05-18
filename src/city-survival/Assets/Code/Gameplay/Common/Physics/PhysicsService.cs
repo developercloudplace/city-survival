@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Code.Gameplay.Common.Physics
 {
-    public class PhysicsService : IPhysicsService
+    public class PhysicsService : IPhysicsService 
     {
         private static readonly RaycastHit[] Hits = new RaycastHit[128];
         private static readonly Collider[] OverlapHits = new Collider[128];
@@ -77,9 +77,37 @@ namespace Code.Gameplay.Common.Physics
 
         public IEnumerable<GameEntity> CircleCast(Vector3 position, float radius, int layerMask)
         {
-            int hitCount = OverlapCircle(position, radius, OverlapHits, layerMask);
+             int hitCount = SimpleOverlapSphere(position, radius, OverlapHits, layerMask);
+            //int hitCount = OverlapSphere<>(position, radius, OverlapHits, layerMask);
 
             DrawDebug(position, radius, 1f, Color.red);
+            
+            
+            if (hitCount == 0)
+            {
+                Debug.Log("Cast1");
+            }
+
+            for (int i = 0; i < hitCount; i++)
+            {
+                Debug.Log("Cast2");
+              //  Gizmos.color = Color.green;
+              //  Gizmos.DrawSphere(position, 1);
+                
+                GameEntity entity = _collisionRegistry.Get<GameEntity>(OverlapHits[i].GetInstanceID());
+                if (entity == null)
+                    continue;
+
+                yield return entity;
+            }
+        }
+        public IEnumerable<GameEntity> SphereCast(Vector3 position, float radius, int layerMask)
+        {
+             int hitCount = SimpleOverlapSphere(position, radius, OverlapHits, layerMask);
+             
+
+            DrawDebug(position, radius, 1f, Color.red);
+            Debug.Log("Cast");
 
             for (int i = 0; i < hitCount; i++)
             {
@@ -97,6 +125,7 @@ namespace Code.Gameplay.Common.Physics
 
             DrawDebug(position, radius, 1f, Color.green);
 
+           
             for (int i = 0; i < hitCount; i++)
             {
                 GameEntity entity = _collisionRegistry.Get<GameEntity>(OverlapHits[i].GetInstanceID());
@@ -131,7 +160,11 @@ namespace Code.Gameplay.Common.Physics
             return null;
         }
 
+
         public int OverlapCircle(Vector3 worldPos, float radius, Collider[] hits, int layerMask) =>
+            UnityEngine.Physics.OverlapSphereNonAlloc(worldPos, radius, hits, layerMask);
+
+        public int SimpleOverlapSphere(Vector3 worldPos, float radius, Collider[] hits, int layerMask) =>
             UnityEngine.Physics.OverlapSphereNonAlloc(worldPos, radius, hits, layerMask);
 
         private static void DrawDebug(Vector2 worldPos, float radius, float seconds, Color color)
@@ -143,3 +176,38 @@ namespace Code.Gameplay.Common.Physics
         }
     }
 }
+
+
+
+
+
+
+// public GameEntity SimpleOverlapSphere(Vector3 worldPos, float radius, Collider[] hits, int layerMask)
+//     
+// {
+//     int hitCount = UnityEngine.Physics.OverlapSphereNonAlloc(worldPos, radius, hits, layerMask);
+//
+//     if (hitCount == 0)
+//     {
+//         Gizmos.color = Color.red;
+//         Gizmos.DrawSphere(worldPos, 1);
+//     }
+//     
+//     for (int i = 0; i < hitCount; i++)
+//     {
+//         Gizmos.color = Color.green;
+//         Gizmos.DrawSphere(worldPos, 1);
+//         
+//         Collider hit = OverlapHits[i];
+//         if (hit == null)
+//             continue;
+//
+//         GameEntity entity = _collisionRegistry.Get<GameEntity>(hit.GetInstanceID());
+//         if (entity == null)
+//             continue;
+//
+//         return entity;
+//     }
+//
+//     return null;
+// }

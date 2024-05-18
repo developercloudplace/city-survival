@@ -13,6 +13,7 @@ namespace Code.Gameplay.Features.Enemies.Registrar
         public EnemyAnimator EnemyAnimator;
         public int MaxHp = 10;
         public float Damage = 1;
+        public float Radius = 1;
 
         public override void RegistrarComponent()
         {
@@ -24,7 +25,7 @@ namespace Code.Gameplay.Features.Enemies.Registrar
                 .AddMaxXp(MaxHp)
                 .AddDamage(Damage)
                 .AddTargetBuffer(new List<int>(1))
-                .AddRadius(.3f)
+                .AddRadius(Radius)
                 .AddDamageTakenAnimator(EnemyAnimator)
                 .AddCollectTargetsInterval(.5f)
                 .AddCollectTargetsTimer(0)
