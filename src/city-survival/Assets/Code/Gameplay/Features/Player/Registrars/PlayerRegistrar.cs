@@ -1,6 +1,4 @@
-﻿using System;
-using Code.Common.Extensions;
-using Code.Gameplay.Features.Player.Behaviours;
+﻿using Code.Common.Extensions;
 using Code.Infrastructure.View.Registrars;
 using UnityEngine;
 
@@ -11,7 +9,7 @@ namespace Code.Gameplay.Features.Player.Registrars
     {
         public float Speed;
         public int MaxHp = 100;
-        public PlayerAnimator PlayerAnimator;
+
         public override void RegistrarComponent()
         {
             Entity
@@ -19,9 +17,7 @@ namespace Code.Gameplay.Features.Player.Registrars
                 .AddCurrentXp(MaxHp)
                 .AddMaxXp(MaxHp)
                 .AddSpeed(Speed)
-                .AddDamageTakenAnimator(PlayerAnimator)
                 .AddDirection(Vector3.zero)
-                .AddPlayerAnimator(PlayerAnimator)
                 .With(x => x.isPlayer = true)
                 .With(x => x.isRotating = true)
                 .With(x => x.isMovementAvailable = true)
@@ -30,11 +26,6 @@ namespace Code.Gameplay.Features.Player.Registrars
 
         public override void UnRegistrarComponent()
         {
-            if (Entity.hasPlayerAnimator)
-                Entity.RemovePlayerAnimator();
-            if (Entity.hasDamageTakenAnimator) 
-                Entity.RemoveDamageTakenAnimator();
-
         }
     }
 }

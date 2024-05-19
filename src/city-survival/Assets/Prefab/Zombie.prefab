@@ -9,13 +9,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3279755713127575079}
-  - component: {fileID: 2981608861927981135}
   - component: {fileID: 9157377104833296358}
   - component: {fileID: 5784396607878836718}
-  - component: {fileID: 622168114759101859}
   - component: {fileID: 1125549885826636474}
   - component: {fileID: 4111211912378021310}
   - component: {fileID: 6523580207299997733}
+  - component: {fileID: 7757421920362918372}
   m_Layer: 0
   m_Name: Zombie
   m_TagString: Untagged
@@ -39,24 +38,6 @@ Transform:
   - {fileID: 7730767983837254873}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2981608861927981135
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2528681016961512681}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15d2070a93014b448a76f50d949cb3e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  EntityView: {fileID: 5784396607878836718}
-  Speed: 1
-  EnemyAnimator: {fileID: 9157377104833296358}
-  MaxHp: 10
-  Damage: 1
-  Radius: 1
 --- !u!114 &9157377104833296358
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -82,19 +63,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1dc63e3c441a41b5b8d66a1c512dd57f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &622168114759101859
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2528681016961512681}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f421428b3d3147b2bf9a0c51f859c3de, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  EntityBehavior: {fileID: 5784396607878836718}
 --- !u!95 &1125549885826636474
 Animator:
   serializedVersion: 5
@@ -142,6 +110,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EntityView: {fileID: 5784396607878836718}
+--- !u!114 &7757421920362918372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2528681016961512681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaaaf5c2bb7747e1b023ff9f298e6163, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EntityView: {fileID: 5784396607878836718}
+  EnemyAnimator: {fileID: 9157377104833296358}
 --- !u!1001 &7735275378389998997
 PrefabInstance:
   m_ObjectHideFlags: 0

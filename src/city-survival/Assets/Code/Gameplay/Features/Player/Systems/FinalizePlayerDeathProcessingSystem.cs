@@ -22,7 +22,7 @@ namespace Code.Gameplay.Features.Player.Systems
             foreach (GameEntity player in _players.GetEntities(_buffer))
             {
                 player.isProcessingDeath = false;
-               // player.isDestructed = true;
+               
             }
         }
     }

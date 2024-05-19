@@ -9,14 +9,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7099088668910757328}
-  - component: {fileID: 7932793936091719039}
   - component: {fileID: 4935229062146643048}
   - component: {fileID: 5129691411937829869}
   - component: {fileID: 43614000855005916}
   - component: {fileID: 2440551226361395701}
   - component: {fileID: 3472909463644760257}
-  - component: {fileID: 1192285984328843196}
   - component: {fileID: 241477833907373309}
+  - component: {fileID: 829818157740129686}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -41,22 +40,6 @@ Transform:
   - {fileID: 5655387826498110877}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7932793936091719039
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3995868917413834730}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39811209d8b84e7aa1a9a5cc9c6494ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  EntityView: {fileID: 43614000855005916}
-  Speed: 10
-  MaxHp: 100
-  PlayerAnimator: {fileID: 4935229062146643048}
 --- !u!114 &4935229062146643048
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -131,19 +114,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EntityView: {fileID: 43614000855005916}
---- !u!114 &1192285984328843196
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3995868917413834730}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f421428b3d3147b2bf9a0c51f859c3de, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  EntityBehavior: {fileID: 43614000855005916}
 --- !u!136 &241477833907373309
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -167,6 +137,20 @@ CapsuleCollider:
   m_Height: 1.5
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &829818157740129686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3995868917413834730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85ecbe84dc7e4c82b2d3163e4ca638b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EntityView: {fileID: 43614000855005916}
+  PlayerAnimator: {fileID: 4935229062146643048}
 --- !u!1 &7426519728561592409
 GameObject:
   m_ObjectHideFlags: 0

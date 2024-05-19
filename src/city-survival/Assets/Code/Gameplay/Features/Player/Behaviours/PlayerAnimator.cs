@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Code.Gameplay.Features.Player.Behaviours
 {
-    public class PlayerAnimator : MonoBehaviour , IDamageTakenAnimator
+    public class PlayerAnimator : MonoBehaviour, IDamageTakenAnimator
     {
         private readonly int _isMovingHash = Animator.StringToHash("isMoving");
         private readonly int _attackHash = Animator.StringToHash("attack");
@@ -14,19 +14,26 @@ namespace Code.Gameplay.Features.Player.Behaviours
         public Animator Animator;
         public Transform point;
         public GameObject fx;
+        private bool _takeDamage = true;
 
         public void PlayMove() => Animator.SetBool(_isMovingHash, true);
         public void PlayIdle() => Animator.SetBool(_isMovingHash, false);
 
         public void PlayDamageTaken()
         {
-            var go =  Instantiate(fx,point.position, quaternion.identity );
-            Destroy(go,.3f);
+            if (_takeDamage)
+            {
+                var go = Instantiate(fx, point.position, quaternion.identity);
+                Destroy(go, .3f);
+            }
         }
 
         public void PlayDied() => Animator.SetTrigger(_diedHash);
-        public void PlayAttack() => Animator.SetTrigger(_attackHash);
 
+        public void StopDamageTaken() => 
+            _takeDamage = false;
+
+        public void PlayAttack() => Animator.SetTrigger(_attackHash);
 
 
         public void ResetAll()

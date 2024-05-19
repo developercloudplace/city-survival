@@ -26,7 +26,9 @@ namespace Code.Gameplay.Features.Player.Systems
                 {
                     player.PlayerAnimator.PlayDied();
                 }
-                player.ReplaceSelfDestructTimer(3);
+
+                player.PlayerAnimator.StopDamageTaken();
+                player.ReplaceSelfDestructTimer(5);
             }
         }
     }

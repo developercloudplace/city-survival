@@ -30,5 +30,6 @@ public class EnemyDeathSystem : IExecuteSystem
 
             enemy.ReplaceSelfDestructTimer(DEATH_ANIMATION_TIMER);
         }
+        
     }
 }
