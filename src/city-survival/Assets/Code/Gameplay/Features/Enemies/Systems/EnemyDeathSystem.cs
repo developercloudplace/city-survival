@@ -22,7 +22,7 @@ public class EnemyDeathSystem : IExecuteSystem
         {
             enemy.isMovementAvailable = false;
             enemy.isRotating = false;
-            
+
             if (enemy.hasEnemyAnimator)
             {
                 enemy.EnemyAnimator.PlayDied();
@@ -30,6 +30,5 @@ public class EnemyDeathSystem : IExecuteSystem
 
             enemy.ReplaceSelfDestructTimer(DEATH_ANIMATION_TIMER);
         }
-        
     }
 }

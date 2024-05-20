@@ -7,6 +7,7 @@ using Code.Gameplay.Features.Player;
 using Code.Gameplay.Features.TargetCollection;
 using Code.Gameplay.Input;
 using Code.Infrastructure.System;
+using Code.Infrastructure.View;
 
 namespace Code.Gameplay
 {
@@ -15,9 +16,12 @@ namespace Code.Gameplay
         public MainGameplayFeatures(ISystemFactory systemFactory)
         {
             Add(systemFactory.Create<InputFeature>());
+            Add(systemFactory.Create<BindViewFeature>());
+            
+            Add(systemFactory.Create<MovementFeatures>());
             Add(systemFactory.Create<PlayerFeatures>());
             Add(systemFactory.Create<EnemyFeatures>());
-            Add(systemFactory.Create<MovementFeatures>());
+            
             Add(systemFactory.Create<CollectTargetsFeature>());
             Add(systemFactory.Create<DamageApplicationFeatures>());
             Add(systemFactory.Create<ProcessDestructedFeature>());

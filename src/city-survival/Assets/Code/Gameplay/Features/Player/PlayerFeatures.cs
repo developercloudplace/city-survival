@@ -9,6 +9,7 @@ namespace Code.Gameplay.Features.Player
     {
         public PlayerFeatures(ISystemFactory systemFactory)
         {
+            Add(systemFactory.Create<InitializePlayerSystem>());
             Add(systemFactory.Create<SetPlayerDirectionByInput>());
             Add(systemFactory.Create<CameraFollowPlayerSystem>());
             Add(systemFactory.Create<AnimatePlayerMovementSystem>());

@@ -38,6 +38,7 @@ namespace Code.Gameplay.Features.Enemies.Factory
                     .AddMaxXp(3)
                     .AddDamage(1)
                     .AddTargetBuffer(new List<int>(1))
+                    .AddViewPath("Enemy/Zombie")//Resources path. TODO:place Addressable labels
                     .AddRadius(1)
                     .AddCollectTargetsInterval(.5f)
                     .AddCollectTargetsTimer(0)

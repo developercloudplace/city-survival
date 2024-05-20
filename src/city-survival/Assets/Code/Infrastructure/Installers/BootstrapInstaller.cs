@@ -11,6 +11,7 @@ using Code.Infrastructure.AssetManagement;
 using Code.Infrastructure.Identifiers;
 using Code.Infrastructure.Loading;
 using Code.Infrastructure.System;
+using Code.Infrastructure.View.Factory;
 using Zenject;
 using NotImplementedException = System.NotImplementedException;
 
@@ -38,6 +39,7 @@ namespace Code.Infrastructure.Installers
 
         private void BindGameplayFactory()
         {
+            Container.Bind<IEntityViewFactory>().To<EntityViewFactory>().AsSingle();
             Container.Bind<IEnemyFactory>().To<EnemyFactory>().AsSingle();
             Container.Bind<IPlayerFactory>().To<PlayerFactory>().AsSingle();
         }

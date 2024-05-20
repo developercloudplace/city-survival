@@ -1,15 +1,17 @@
-// using Code.Common.Entity;
-// using Code.Gameplay.Common;
-// using Entitas;
-//
-// namespace Code.Gameplay.Features.Enemies.Systems
-// {
-//   public class InitializeSpawnTimerSystem : IInitializeSystem
-//   {
-//     public void Initialize()
-//     {
-//       CreateEntity.Empty()
-//         .AddSpawnTimer(GameplayConstants.EnemySpawnTimer);
-//     }
-//   }
-// }
+using Code.Common.Entity;
+using Entitas;
+
+namespace Code.Gameplay.Features.Enemies.Systems
+{
+    public class InitializeSpawnTimerSystem : IInitializeSystem
+
+    {
+        private const float ENEMY_SPAWN_TIMER = 1;
+
+        public void Initialize()
+        {
+            CreateEntity.Empty()
+                .AddSpawnTimer(ENEMY_SPAWN_TIMER);
+        }
+    }
+}
