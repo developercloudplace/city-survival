@@ -1,4 +1,5 @@
 using System;
+using UnityEngine;
 
 namespace Code.Gameplay.Features.Abilities.Configs
 {
@@ -8,5 +9,6 @@ namespace Code.Gameplay.Features.Abilities.Configs
         public float Speed;
         public int Pierce = 1;
         public float ContactSphereRadios;
+        public Transform SpawnPoint;
     }
 }

@@ -33,28 +33,24 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Code.Gameplay.Features.Cooldowns.CooldownUp cooldownUp { get { return (Code.Gameplay.Features.Cooldowns.CooldownUp)GetComponent(GameComponentsLookup.CooldownUp); } }
-    public float CooldownUp { get { return cooldownUp.Value; } }
-    public bool hasCooldownUp { get { return HasComponent(GameComponentsLookup.CooldownUp); } }
+    static readonly Code.Gameplay.Features.Cooldowns.CooldownUp cooldownUpComponent = new Code.Gameplay.Features.Cooldowns.CooldownUp();
 
-    public GameEntity AddCooldownUp(float newValue) {
-        var index = GameComponentsLookup.CooldownUp;
-        var component = (Code.Gameplay.Features.Cooldowns.CooldownUp)CreateComponent(index, typeof(Code.Gameplay.Features.Cooldowns.CooldownUp));
-        component.Value = newValue;
-        AddComponent(index, component);
-        return this;
-    }
+    public bool isCooldownUp {
+        get { return HasComponent(GameComponentsLookup.CooldownUp); }
+        set {
+            if (value != isCooldownUp) {
+                var index = GameComponentsLookup.CooldownUp;
+                if (value) {
+                    var componentPool = GetComponentPool(index);
+                    var component = componentPool.Count > 0
+                            ? componentPool.Pop()
+                            : cooldownUpComponent;
 
-    public GameEntity ReplaceCooldownUp(float newValue) {
-        var index = GameComponentsLookup.CooldownUp;
-        var component = (Code.Gameplay.Features.Cooldowns.CooldownUp)CreateComponent(index, typeof(Code.Gameplay.Features.Cooldowns.CooldownUp));
-        component.Value = newValue;
-        ReplaceComponent(index, component);
-        return this;
-    }
-
-    public GameEntity RemoveCooldownUp() {
-        RemoveComponent(GameComponentsLookup.CooldownUp);
-        return this;
+                    AddComponent(index, component);
+                } else {
+                    RemoveComponent(index);
+                }
+            }
+        }
     }
 }

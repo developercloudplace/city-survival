@@ -33,28 +33,24 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Code.Gameplay.Features.Abilities.DroneAbilityComponent droneAbility { get { return (Code.Gameplay.Features.Abilities.DroneAbilityComponent)GetComponent(GameComponentsLookup.DroneAbility); } }
-    public Code.Gameplay.Features.Abilities.AbilityId DroneAbility { get { return droneAbility.Value; } }
-    public bool hasDroneAbility { get { return HasComponent(GameComponentsLookup.DroneAbility); } }
+    static readonly Code.Gameplay.Features.Abilities.DroneAbilityComponent droneAbilityComponent = new Code.Gameplay.Features.Abilities.DroneAbilityComponent();
 
-    public GameEntity AddDroneAbility(Code.Gameplay.Features.Abilities.AbilityId newValue) {
-        var index = GameComponentsLookup.DroneAbility;
-        var component = (Code.Gameplay.Features.Abilities.DroneAbilityComponent)CreateComponent(index, typeof(Code.Gameplay.Features.Abilities.DroneAbilityComponent));
-        component.Value = newValue;
-        AddComponent(index, component);
-        return this;
-    }
+    public bool isDroneAbility {
+        get { return HasComponent(GameComponentsLookup.DroneAbility); }
+        set {
+            if (value != isDroneAbility) {
+                var index = GameComponentsLookup.DroneAbility;
+                if (value) {
+                    var componentPool = GetComponentPool(index);
+                    var component = componentPool.Count > 0
+                            ? componentPool.Pop()
+                            : droneAbilityComponent;
 
-    public GameEntity ReplaceDroneAbility(Code.Gameplay.Features.Abilities.AbilityId newValue) {
-        var index = GameComponentsLookup.DroneAbility;
-        var component = (Code.Gameplay.Features.Abilities.DroneAbilityComponent)CreateComponent(index, typeof(Code.Gameplay.Features.Abilities.DroneAbilityComponent));
-        component.Value = newValue;
-        ReplaceComponent(index, component);
-        return this;
-    }
-
-    public GameEntity RemoveDroneAbility() {
-        RemoveComponent(GameComponentsLookup.DroneAbility);
-        return this;
+                    AddComponent(index, component);
+                } else {
+                    RemoveComponent(index);
+                }
+            }
+        }
     }
 }

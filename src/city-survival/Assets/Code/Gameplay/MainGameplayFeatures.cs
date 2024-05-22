@@ -1,4 +1,5 @@
 ﻿using Code.Common.Destruct;
+using Code.Gameplay.Features.Abilities;
 using Code.Gameplay.Features.DamageApplication;
 using Code.Gameplay.Features.Enemies;
 using Code.Gameplay.Features.LifeTime;
@@ -21,6 +22,7 @@ namespace Code.Gameplay
             Add(systemFactory.Create<MovementFeatures>());
             Add(systemFactory.Create<PlayerFeatures>());
             Add(systemFactory.Create<EnemyFeatures>());
+            Add(systemFactory.Create<AbilityFeature>());
             
             Add(systemFactory.Create<CollectTargetsFeature>());
             Add(systemFactory.Create<DamageApplicationFeatures>());
