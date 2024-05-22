@@ -7,7 +7,8 @@ namespace Code.Gameplay.Features.Abilities.Configs
     public class AbilityLevel
     {
         public float Cooldown;
-        public EntityBehavior ViewPrefab; 
-        
+        public EntityBehavior ViewPrefab;
+        public ProjectileSetup ProjectileSetup;
+
     }
 }

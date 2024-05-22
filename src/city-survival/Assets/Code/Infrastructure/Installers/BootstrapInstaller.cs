@@ -7,6 +7,7 @@ using Code.Gameplay.Features.Enemies.Factory;
 using Code.Gameplay.Features.Player.Factory;
 using Code.Gameplay.Input.Service;
 using Code.Gameplay.Levels;
+using Code.Gameplay.StaticData;
 using Code.Infrastructure.AssetManagement;
 using Code.Infrastructure.Identifiers;
 using Code.Infrastructure.Loading;
@@ -53,6 +54,7 @@ namespace Code.Infrastructure.Installers
         private void BindGameplayService()
         {
             Container.Bind<ILevelDataProvider>().To<LevelDataProvider>().AsSingle();
+            Container.Bind<IStaticDataService>().To<StaticDataService>().AsSingle();
         }
 
         private void BindInfrastructureServices()
