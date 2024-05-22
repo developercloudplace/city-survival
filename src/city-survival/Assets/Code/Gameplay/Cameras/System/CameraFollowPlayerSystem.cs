@@ -11,6 +11,7 @@ namespace Code.Gameplay.Cameras.System
         private readonly IGroup<GameEntity> _players;
         private readonly ICameraProvider _cameraProvider;
 
+
         public CameraFollowPlayerSystem(GameContext gameContext, ICameraProvider cameraProvider)
         {
             _cameraProvider = cameraProvider;
@@ -24,9 +25,12 @@ namespace Code.Gameplay.Cameras.System
         {
             foreach (var player in _players)
             {
-                 _cameraProvider.MainCamera.transform.SetWorldXZ(player.WorldPosition.x, player.WorldPosition.z);
-              // _cameraProvider.MainCamera.transform.position =
-                 //  new Vector3(player.WorldPosition.x, 0,player.WorldPosition.z);
+                _cameraProvider.MainCamera.transform.SetWorldXYZ
+                (player.WorldPosition.x
+                    , player.WorldPosition.y
+                    , player.WorldPosition.z);
+                // _cameraProvider.MainCamera.transform.position =
+                //  new Vector3(player.WorldPosition.x, 0,player.WorldPosition.z);
             }
         }
     }

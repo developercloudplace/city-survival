@@ -16,8 +16,8 @@ namespace Code.Gameplay.Features.Enemies.Systems
         private readonly IGroup<GameEntity> _player;
         private ICameraProvider _cameraProvider;
 
-        private const float SPAWN_DISTANCE_GAP = 1f;
-        private const float ENEMY_SPAWN_TIMER = 1;
+        private const float SPAWN_DISTANCE_GAP = 25;
+        private const float ENEMY_SPAWN_TIMER = 0.7f;
 
         public EnemySpawnSystem(GameContext game, ITimeService timeService,
             IEnemyFactory enemyFactory, ICameraProvider cameraProvider)
@@ -71,7 +71,7 @@ namespace Code.Gameplay.Features.Enemies.Systems
 
         private Vector3 VerticalSpawnPosition(Vector3 aroundPosition)
         {
-            Vector3[] verticalDirections = { Vector3.up, Vector3.down };
+            Vector3[] verticalDirections = { Vector3.forward,-Vector3.forward };
             Vector3 primaryDirection = verticalDirections.PickRandom();
 
             float verticalOffsetDistance = _cameraProvider.WorldScreenHeight / 2 + SPAWN_DISTANCE_GAP;

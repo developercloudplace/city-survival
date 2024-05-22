@@ -15,7 +15,7 @@ namespace Code.Common.Extensions
       if (when)
         apply?.Invoke(self);
 
-      return self;
+      return self;  
     }
   }
 }

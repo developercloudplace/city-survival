@@ -1,18 +1,22 @@
 ﻿using UnityEngine;
+using Zenject;
 
 namespace Code.Common.Extensions
 {
-    public static class TransformExtensions
+    public static class TransformExtensions 
     {
+
+        [Inject]
         public static Transform SetWorldXY(this Transform transform, float x, float y)
         {
             transform.position = new Vector3(x, y, transform.position.z);
             return transform;
         }
 
-        public static Transform SetWorldXZ(this Transform transform, float x, float z)
+        public static Transform SetWorldXYZ(this Transform transform, float x,float y,float z)
         {
-            transform.position = new Vector3(x, transform.position.y, z);
+            
+            transform.position = new Vector3(x, y + 25, z - 13);
             return transform;
         }
 
