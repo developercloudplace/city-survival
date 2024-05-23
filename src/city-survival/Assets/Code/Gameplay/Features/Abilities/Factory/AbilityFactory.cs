@@ -1,6 +1,7 @@
 ﻿using Code.Common.Entity;
 using Code.Common.Extensions;
 using Code.Gameplay.Features.Abilities.Configs;
+using Code.Gameplay.Features.Cooldowns.System;
 using Code.Gameplay.StaticData;
 using Code.Infrastructure.Identifiers;
 using UnityEngine;
@@ -18,7 +19,7 @@ namespace Code.Gameplay.Features.Abilities.Factory
             _identifiers = identifiers;
             _staticData = staticData;
         }
-        
+
         public GameEntity CreateDroneAbility(int level, Vector3 at)
         {
             AbilityLevel abilityLevel = _staticData.GetAbilityLevel(AbilityId.Drone, level);
@@ -29,10 +30,22 @@ namespace Code.Gameplay.Features.Abilities.Factory
                 .AddViewPrefab(abilityLevel.ViewPrefab)
                 .AddSpeed(setup.Speed)
                 .AddDirection(Vector3.zero)
+                .AddCurrentTarget(Vector3.zero)
                 .With(x => x.isMoving = true)
                 .With(x => x.isRotating = true)
                 .With(x => x.isMovementAvailable = true)
                 .With(x => x.isDroneAbility = true);
+        }
+
+        public GameEntity CreateMachineGunAbility(int level)
+        {
+            AbilityLevel abilityLevel = _staticData.GetAbilityLevel(AbilityId.MachineGun, level);
+            return CreateEntity.Empty()
+                .AddId(_identifiers.Next())
+                .AddWorldPosition(Vector3.zero)
+                .AddCooldown(abilityLevel.Cooldown)
+                .With(x => x.isMachineGunAbility = true)
+                .PutOnCooldown();
         }
     }
 }

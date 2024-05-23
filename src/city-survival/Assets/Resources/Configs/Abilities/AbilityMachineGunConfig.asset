@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5bc5fae27262442aba82f155efb02b2e, type: 3}
-  m_Name: AbilityConfig
+  m_Name: AbilityMachineGunConfig
   m_EditorClassIdentifier: 
-  AbilityId: 1
+  AbilityId: 2
   Levels:
-  - Cooldown: 0
-    ViewPrefab: {fileID: 5962278081158037212, guid: bc398d4e15adb594c91e2387a093b24f,
+  - Cooldown: 3
+    ViewPrefab: {fileID: 4283663605577815849, guid: e6449f49d32794c4d9fa8d692d70d175,
       type: 3}
     ProjectileSetup:
-      Speed: 8
-      Pierce: 0
-      ContactSphereRadios: 0
+      Speed: 30
+      Pierce: 1
+      ContactSphereRadios: 1
       SpawnPoint: {fileID: 0}

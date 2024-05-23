@@ -33,8 +33,9 @@ namespace Code.Gameplay.StaticData
 
         private void LoadAbilities()
         {
-            _abilityById = Resources.LoadAll<AbilityConfig>("Config/AbilityConfig")
+            _abilityById = Resources.LoadAll<AbilityConfig>("Configs/Abilities")
                 .ToDictionary(x => x.AbilityId, x => x);
+            
         }
     }
 }

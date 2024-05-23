@@ -3,6 +3,7 @@
     public enum AbilityId
     {
         Unknown = 0,
-        Drone = 1
+        Drone = 1,
+        MachineGun = 2
     }
 }

@@ -21,7 +21,7 @@ namespace Code.Gameplay.Features.Cooldowns.System
         {
             foreach (GameEntity cooldown in _cooldowns.GetEntities(_buffer))
             {
-                cooldown.ReplaceCooldown(cooldown.CooldownLeft - _time.DeltaTime);
+                cooldown.ReplaceCooldownLeft(cooldown.CooldownLeft - _time.DeltaTime);
                 if (cooldown.CooldownLeft <= 0)
                 {
                     cooldown.isCooldownUp = true;

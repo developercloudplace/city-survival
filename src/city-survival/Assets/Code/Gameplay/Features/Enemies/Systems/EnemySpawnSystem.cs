@@ -11,7 +11,7 @@ namespace Code.Gameplay.Features.Enemies.Systems
     public class EnemySpawnSystem : IExecuteSystem
     {
         private readonly IGroup<GameEntity> _timers;
-        private readonly ITimeService _timeService;
+        private readonly ITimeService _time;
         private readonly IEnemyFactory _enemyFactory;
         private readonly IGroup<GameEntity> _player;
         private ICameraProvider _cameraProvider;
@@ -19,12 +19,12 @@ namespace Code.Gameplay.Features.Enemies.Systems
         private const float SPAWN_DISTANCE_GAP = 25;
         private const float ENEMY_SPAWN_TIMER = 0.7f;
 
-        public EnemySpawnSystem(GameContext game, ITimeService timeService,
+        public EnemySpawnSystem(GameContext game, ITimeService time,
             IEnemyFactory enemyFactory, ICameraProvider cameraProvider)
         {
             _cameraProvider = cameraProvider;
             _enemyFactory = enemyFactory;
-            _timeService = timeService;
+            _time = time;
 
             _timers = game.GetGroup(GameMatcher.AllOf(GameMatcher.SpawnTimer));
             _player = game.GetGroup(GameMatcher
@@ -39,7 +39,7 @@ namespace Code.Gameplay.Features.Enemies.Systems
             foreach (GameEntity player in _player)
             foreach (GameEntity timer in _timers)
             {
-                timer.ReplaceSpawnTimer(timer.SpawnTimer - _timeService.DeltaTime);
+                timer.ReplaceSpawnTimer(timer.SpawnTimer - _time.DeltaTime);
                 if (timer.SpawnTimer <= 0)
                 {
                     timer.ReplaceSpawnTimer(ENEMY_SPAWN_TIMER);

@@ -16,13 +16,13 @@ namespace Code.Gameplay.Features.Abilities.System
             ILevelDataProvider levelDataProvider)
         {
             _abilityFactory = abilityFactory;
-
             _levelDataProvider = levelDataProvider;
         }
 
         public void Initialize()
         {
             _abilityFactory.CreateDroneAbility(1, _levelDataProvider.StartPoint);
+            _abilityFactory.CreateMachineGunAbility(1);
         }
     }
 }
