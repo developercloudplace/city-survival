@@ -14,11 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AbilityId: 2
   Levels:
-  - Cooldown: 3
+  - Cooldown: 0.2
     ViewPrefab: {fileID: 4283663605577815849, guid: e6449f49d32794c4d9fa8d692d70d175,
       type: 3}
     ProjectileSetup:
       Speed: 30
       Pierce: 1
-      ContactSphereRadios: 1
+      ContactSphereRadios: 0.3
+      LifeTime: 4
       SpawnPoint: {fileID: 0}

@@ -17,7 +17,7 @@ namespace Code.Gameplay.Features.Enemies.Systems
         private ICameraProvider _cameraProvider;
 
         private const float SPAWN_DISTANCE_GAP = 25;
-        private const float ENEMY_SPAWN_TIMER = 0.7f;
+        private const float ENEMY_SPAWN_TIMER = .3f;
 
         public EnemySpawnSystem(GameContext game, ITimeService time,
             IEnemyFactory enemyFactory, ICameraProvider cameraProvider)

@@ -30,7 +30,7 @@ namespace Code.Gameplay.Features.Abilities.Factory
                 .AddViewPrefab(abilityLevel.ViewPrefab)
                 .AddSpeed(setup.Speed)
                 .AddDirection(Vector3.zero)
-                .AddCurrentTarget(Vector3.zero)
+                .AddCurrentTargetPosition(Vector3.zero)
                 .With(x => x.isMoving = true)
                 .With(x => x.isRotating = true)
                 .With(x => x.isMovementAvailable = true)

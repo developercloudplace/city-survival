@@ -23,7 +23,7 @@ namespace Code.Gameplay.Features.Enemies.Registrar
                 .AddMaxXp(MaxHp)
                 .AddDamage(Damage)
                 .AddTargetBuffer(new List<int>(1))
-                .AddRadius(Radius)
+                .AddCollectTargetRadius(Radius)
                 .AddCollectTargetsInterval(.5f)
                 .AddCollectTargetsTimer(0)
                 .AddLayerMask(CollisionLayer.Player.AsMask())

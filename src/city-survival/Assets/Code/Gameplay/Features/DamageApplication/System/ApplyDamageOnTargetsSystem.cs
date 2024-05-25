@@ -12,7 +12,7 @@ namespace Code.Gameplay.Features.DamageApplication.System
             _gameContext = gameContext;
             _damageDealers = gameContext.GetGroup(GameMatcher
                 .AllOf(
-                    GameMatcher.DamageTakenAnimator,
+                 //   GameMatcher.DamageTakenAnimator,
                     GameMatcher.Damage));
         }
 

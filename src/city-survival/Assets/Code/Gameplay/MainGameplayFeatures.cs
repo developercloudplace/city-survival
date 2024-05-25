@@ -23,6 +23,7 @@ namespace Code.Gameplay
             Add(systemFactory.Create<PlayerFeatures>());
             Add(systemFactory.Create<EnemyFeatures>());
             Add(systemFactory.Create<AbilityFeature>());
+            Add(systemFactory.Create<ArmamentFeature>());
             
             Add(systemFactory.Create<CollectTargetsFeature>());
             Add(systemFactory.Create<DamageApplicationFeatures>());

@@ -14,6 +14,8 @@ namespace Code.Gameplay.Features.Armaments.Factory
     {
         private readonly IIdentifierService _identifier;
         private readonly IStaticDataService _staticData;
+        private const int TARGET_BUFFER_SIZE = 64;
+
 
         public ArmamentsFactory(IIdentifierService identifier, IStaticDataService staticData)
         {
@@ -32,16 +34,17 @@ namespace Code.Gameplay.Features.Armaments.Factory
                 .AddDamage(1)
                 .AddSpeed(setup.Speed)
                 .AddRotate(Quaternion.identity)
-                //.AddDirection(Vector3.zero)
-                .AddRadius(setup.ContactSphereRadios)
+                .AddCollectTargetRadius(setup.ContactSphereRadios)
                 .AddLayerMask(CollisionLayer.Enemy.AsMask())
-                .AddTargetBuffer(new List<int>(16))
+                .AddTargetBuffer(new List<int>(TARGET_BUFFER_SIZE))
+                .AddProcessedTargetsBuffer(new List<int>(TARGET_BUFFER_SIZE))
                 .AddTargetLimits(setup.Pierce)
+                .AddSelfDestructTimer(setup.LifeTime)
                 .With(x => x.isMoving = true)
-                .With(x => x.isReadyToCollectTargets = true)
                 .With(x => x.isMovementAvailable = true)
-                .With(x => x.isArmament = true);
-               // .With(x => x.isMachineGunAbility = true);
+                .With(x => x.isArmament = true)
+                .With(x => x.isReadyToCollectTargets = true)
+                .With(x => x.isCollectingTargetsContinuously = true);
         }
     }
 }

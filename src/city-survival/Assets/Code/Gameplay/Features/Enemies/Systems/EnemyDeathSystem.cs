@@ -1,5 +1,6 @@
 //using Code.Gameplay.Features.TargetCollection;
 
+using Code.Gameplay.Features.TargetCollection;
 using Entitas;
 
 public class EnemyDeathSystem : IExecuteSystem
@@ -22,6 +23,8 @@ public class EnemyDeathSystem : IExecuteSystem
         {
             enemy.isMovementAvailable = false;
             enemy.isRotating = false;
+
+            enemy.RemoveTargetCollectionComponents();
 
             if (enemy.hasEnemyAnimator)
             {

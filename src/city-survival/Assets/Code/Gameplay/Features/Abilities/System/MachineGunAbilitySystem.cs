@@ -16,14 +16,10 @@ namespace Code.Gameplay.Features.Abilities.System
         private readonly IArmamentsFactory _armamentsFactory;
         private readonly IStaticDataService _staticData;
         private readonly List<GameEntity> _buffer = new(8);
-        private ITimeService _time;
-        private float _reloadTime = 1;
-        private float _cooldownmachinegun = 0.3f;
 
         public MachineGunAbilitySystem(GameContext game, IArmamentsFactory armamentsFactory,
-            IStaticDataService staticData, ITimeService time)
+            IStaticDataService staticData)
         {
-            _time = time;
             _staticData = staticData;
             _armamentsFactory = armamentsFactory;
 
@@ -44,14 +40,16 @@ namespace Code.Gameplay.Features.Abilities.System
             foreach (GameEntity drone in _droneAbilities)
             foreach (GameEntity machineGun in _machineGuns.GetEntities(_buffer))
             {
-                _armamentsFactory
-                    .CreateMachineGunShell(1, drone.WorldPosition + new Vector3(1, 1, 1))
-                    .ReplaceDirection((drone.CurrentTarget - drone.WorldPosition).normalized)
-                    //.ReplaceRotate(drone.Transform.rotation)
-                    .With(x => x.isArmament = true);
-                _reloadTime = _cooldownmachinegun;
+                if (drone.isCurrentTarget)
+                {
+                    _armamentsFactory
+                        .CreateMachineGunShell(1, drone.WorldPosition)
+                        .ReplaceDirection((drone.CurrentTargetPosition - drone.WorldPosition + new Vector3(0, 1, 0))
+                            .normalized)
+                        .With(x => x.isArmament = true);
 
-                machineGun.PutOnCooldown(_staticData.GetAbilityLevel(AbilityId.MachineGun, 1).Cooldown);
+                    machineGun.PutOnCooldown(_staticData.GetAbilityLevel(AbilityId.MachineGun, 1).Cooldown);
+                }
             }
         }
     }

@@ -33,28 +33,24 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Code.Gameplay.Features.Abilities.CurrentTarget currentTarget { get { return (Code.Gameplay.Features.Abilities.CurrentTarget)GetComponent(GameComponentsLookup.CurrentTarget); } }
-    public UnityEngine.Vector3 CurrentTarget { get { return currentTarget.Value; } }
-    public bool hasCurrentTarget { get { return HasComponent(GameComponentsLookup.CurrentTarget); } }
+    static readonly Code.Gameplay.Features.Abilities.CurrentTarget currentTargetComponent = new Code.Gameplay.Features.Abilities.CurrentTarget();
 
-    public GameEntity AddCurrentTarget(UnityEngine.Vector3 newValue) {
-        var index = GameComponentsLookup.CurrentTarget;
-        var component = (Code.Gameplay.Features.Abilities.CurrentTarget)CreateComponent(index, typeof(Code.Gameplay.Features.Abilities.CurrentTarget));
-        component.Value = newValue;
-        AddComponent(index, component);
-        return this;
-    }
+    public bool isCurrentTarget {
+        get { return HasComponent(GameComponentsLookup.CurrentTarget); }
+        set {
+            if (value != isCurrentTarget) {
+                var index = GameComponentsLookup.CurrentTarget;
+                if (value) {
+                    var componentPool = GetComponentPool(index);
+                    var component = componentPool.Count > 0
+                            ? componentPool.Pop()
+                            : currentTargetComponent;
 
-    public GameEntity ReplaceCurrentTarget(UnityEngine.Vector3 newValue) {
-        var index = GameComponentsLookup.CurrentTarget;
-        var component = (Code.Gameplay.Features.Abilities.CurrentTarget)CreateComponent(index, typeof(Code.Gameplay.Features.Abilities.CurrentTarget));
-        component.Value = newValue;
-        ReplaceComponent(index, component);
-        return this;
-    }
-
-    public GameEntity RemoveCurrentTarget() {
-        RemoveComponent(GameComponentsLookup.CurrentTarget);
-        return this;
+                    AddComponent(index, component);
+                } else {
+                    RemoveComponent(index);
+                }
+            }
+        }
     }
 }
