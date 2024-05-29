@@ -21,8 +21,7 @@ namespace Code.Gameplay.Features.Effect.Factory
                 case EffectTypeId.Unknown:
                     break;
                 case EffectTypeId.Damage:
-                    CreateDamage(producerId, targetId, setup.Value);
-                    break;
+                   return CreateDamage(producerId, targetId, setup.Value);
                 default:
                     throw new ArgumentOutOfRangeException();
             }
@@ -30,9 +29,10 @@ namespace Code.Gameplay.Features.Effect.Factory
             throw new Exception($"Effect with type id{setup.EffectTypeId} note exit");
         }
 
-        private void CreateDamage(int producerId, int targetId, float setupValue)
+        private GameEntity CreateDamage(int producerId, int targetId, float setupValue)
         {
-            CreateEntity.Empty().AddId(_identifierService.Next())
+           return CreateEntity.Empty()
+                .AddId(_identifierService.Next())
                 .With(x => x.isEffect = true)
                 .With(x => x.isDamageEffect = true)
                 .AddEffectValue(setupValue)

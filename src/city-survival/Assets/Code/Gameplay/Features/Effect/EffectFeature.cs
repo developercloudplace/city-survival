@@ -7,6 +7,7 @@ namespace Code.Gameplay.Features.Effect
     {
         public EffectFeature(ISystemFactory systems)
         {
+            Add(systems.Create<RemoveEffectsWithoutTargetsSystem>());
             Add(systems.Create<ProcessDamageEffectSystem>());
             Add(systems.Create<CleanupProcessedEffect>());
         }

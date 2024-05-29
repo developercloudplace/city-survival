@@ -44,6 +44,7 @@ namespace Code.Gameplay.Features.Abilities.System
                 {
                     _armamentsFactory
                         .CreateMachineGunShell(1, drone.WorldPosition)
+                        .AddProducerId(drone.Id)
                         .ReplaceDirection((drone.CurrentTargetPosition - drone.WorldPosition + new Vector3(0, 1, 0))
                             .normalized)
                         .With(x => x.isArmament = true);

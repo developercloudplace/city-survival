@@ -39,7 +39,7 @@ namespace Code.Gameplay.Features.Enemies.Factory
                     .AddSpeed(1)
                     .AddCurrentHp(10)
                     .AddMaxHp(3)
-                    .AddEffectSetups(new List<EffectSetup>() {new EffectSetup(){EffectTypeId = EffectTypeId.Damage, Value = 1}})
+                    .AddEffectSetups(new List<EffectSetup>{new EffectSetup(){EffectTypeId = EffectTypeId.Damage, Value = 1}})
                     .AddTargetBuffer(new List<int>(1))
                     .AddViewPath("Enemy/Zombie")//Resources path. TODO:place Addressable labels
                     .AddCollectTargetRadius(1)

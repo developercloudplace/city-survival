@@ -1,6 +1,7 @@
 ﻿using Code.Gameplay.Features.Effect;
 using Code.Gameplay.Features.Effect.Factory;
 using Entitas;
+using UnityEngine;
 
 namespace Code.Gameplay.Features.EffectApplication.System
 {
@@ -14,7 +15,7 @@ namespace Code.Gameplay.Features.EffectApplication.System
             _effectFactory = effectFactory;
             _entities = gameContext.GetGroup(GameMatcher
                 .AllOf(
-                    // GameMatcher.TargetBuffer,
+                    GameMatcher.TargetBuffer,
                     GameMatcher.EffectSetups));
         }
 
@@ -24,7 +25,7 @@ namespace Code.Gameplay.Features.EffectApplication.System
             foreach (int targetId in entity.TargetBuffer)
             foreach (EffectSetup setup in entity.EffectSetups)
             {
-                _effectFactory.CreateEffect(setup, ProducerId(entity), entity.TargetId);
+                _effectFactory.CreateEffect(setup, ProducerId(entity), targetId);
             }
         }
 

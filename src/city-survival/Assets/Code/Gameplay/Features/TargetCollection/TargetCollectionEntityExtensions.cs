@@ -4,10 +4,10 @@ namespace Code.Gameplay.Features.TargetCollection
     {
         public static GameEntity RemoveTargetCollectionComponents(this GameEntity entity)
         {
-         //  if (entity.hasTargetBuffer)
-         //  {
-         //      entity.RemoveTargetBuffer();
-         //  }
+         //   if (entity.hasTargetBuffer)
+         //   {
+         //       entity.RemoveTargetBuffer();
+         //   }
 
             if (entity.hasCollectTargetsInterval)
                 entity.RemoveCollectTargetsInterval();
@@ -16,7 +16,7 @@ namespace Code.Gameplay.Features.TargetCollection
                 entity.RemoveCollectTargetsTimer();
 
             entity.isReadyToCollectTargets = false;
-      
+
             return entity;
         }
     }
