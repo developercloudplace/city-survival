@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Code.Gameplay.Features.TargetCollection;
 using Entitas;
 
 namespace Code.Gameplay.Features.Enemies.Systems
@@ -22,6 +23,7 @@ namespace Code.Gameplay.Features.Enemies.Systems
             foreach (GameEntity enemy in _enemies.GetEntities(_buffer))
             {
                 enemy.isProcessingDeath = false;
+               
             }
         }
     }

@@ -20,6 +20,6 @@ MonoBehaviour:
     ProjectileSetup:
       Speed: 30
       Pierce: 1
-      ContactSphereRadios: 0.3
+      ContactSphereRadios: 1
       LifeTime: 4
       SpawnPoint: {fileID: 0}

@@ -24,14 +24,14 @@ public class EnemyDeathSystem : IExecuteSystem
             enemy.isMovementAvailable = false;
             enemy.isRotating = false;
 
-            enemy.RemoveTargetCollectionComponents();
 
+            enemy.RemoveTargetCollectionComponents();
             if (enemy.hasEnemyAnimator)
             {
                 enemy.EnemyAnimator.PlayDied();
             }
-
             enemy.ReplaceSelfDestructTimer(DEATH_ANIMATION_TIMER);
+           
         }
     }
 }
