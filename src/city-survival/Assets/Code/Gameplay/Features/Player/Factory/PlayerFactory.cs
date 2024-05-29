@@ -17,8 +17,8 @@ namespace Code.Gameplay.Features.Player.Factory
             return CreateEntity.Empty()
                     .AddId(_identifier.Next())
                     .AddWorldPosition(at)
-                    .AddCurrentXp(10)
-                    .AddMaxXp(10)
+                    .AddCurrentHp(10)
+                    .AddMaxHp(10)
                     .AddSpeed(10)
                     .AddViewPath("Player/Player")//Resources path. TODO:place Addressable labels
                     .AddDirection(Vector3.zero)

@@ -26,43 +26,44 @@ public static class GameComponentsLookup {
     public const int DroneAbility = 15;
     public const int MachineGunAbility = 16;
     public const int Armament = 17;
-    public const int Processed = 18;
-    public const int TargetLimits = 19;
-    public const int Cooldown = 20;
-    public const int CooldownLeft = 21;
-    public const int CooldownUp = 22;
-    public const int DamageEffect = 23;
-    public const int Effect = 24;
-    public const int EffectValue = 25;
-    public const int ProducerId = 26;
-    public const int TargetId = 27;
-    public const int Enemy = 28;
-    public const int EnemyAnimator = 29;
-    public const int EnemyTypeId = 30;
-    public const int SpawnTimer = 31;
-    public const int CurrentXp = 32;
-    public const int Dead = 33;
-    public const int MaxXp = 34;
-    public const int ProcessingDeath = 35;
-    public const int Direction = 36;
-    public const int MovementAvailable = 37;
-    public const int Moving = 38;
-    public const int Rotating = 39;
-    public const int Speed = 40;
-    public const int Player = 41;
-    public const int PlayerAnimator = 42;
-    public const int CollectingTargetsContinuously = 43;
-    public const int CollectTargetRadius = 44;
-    public const int CollectTargetsInterval = 45;
-    public const int CollectTargetsTimer = 46;
-    public const int LayerMask = 47;
-    public const int ProcessedTargetsBuffer = 48;
-    public const int ReadyToCollectTargets = 49;
-    public const int TargetBuffer = 50;
-    public const int AxisInput = 51;
-    public const int Input = 52;
+    public const int EffectSetups = 18;
+    public const int Processed = 19;
+    public const int TargetLimits = 20;
+    public const int Cooldown = 21;
+    public const int CooldownLeft = 22;
+    public const int CooldownUp = 23;
+    public const int DamageEffect = 24;
+    public const int Effect = 25;
+    public const int EffectValue = 26;
+    public const int ProducerId = 27;
+    public const int TargetId = 28;
+    public const int Enemy = 29;
+    public const int EnemyAnimator = 30;
+    public const int EnemyTypeId = 31;
+    public const int SpawnTimer = 32;
+    public const int CurrentHp = 33;
+    public const int Dead = 34;
+    public const int MaxHp = 35;
+    public const int ProcessingDeath = 36;
+    public const int Direction = 37;
+    public const int MovementAvailable = 38;
+    public const int Moving = 39;
+    public const int Rotating = 40;
+    public const int Speed = 41;
+    public const int Player = 42;
+    public const int PlayerAnimator = 43;
+    public const int CollectingTargetsContinuously = 44;
+    public const int CollectTargetRadius = 45;
+    public const int CollectTargetsInterval = 46;
+    public const int CollectTargetsTimer = 47;
+    public const int LayerMask = 48;
+    public const int ProcessedTargetsBuffer = 49;
+    public const int ReadyToCollectTargets = 50;
+    public const int TargetBuffer = 51;
+    public const int AxisInput = 52;
+    public const int Input = 53;
 
-    public const int TotalComponents = 53;
+    public const int TotalComponents = 54;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -83,6 +84,7 @@ public static class GameComponentsLookup {
         "DroneAbility",
         "MachineGunAbility",
         "Armament",
+        "EffectSetups",
         "Processed",
         "TargetLimits",
         "Cooldown",
@@ -97,9 +99,9 @@ public static class GameComponentsLookup {
         "EnemyAnimator",
         "EnemyTypeId",
         "SpawnTimer",
-        "CurrentXp",
+        "CurrentHp",
         "Dead",
-        "MaxXp",
+        "MaxHp",
         "ProcessingDeath",
         "Direction",
         "MovementAvailable",
@@ -139,6 +141,7 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Abilities.DroneAbilityComponent),
         typeof(Code.Gameplay.Features.Abilities.MachineGunAbilityComponent),
         typeof(Code.Gameplay.Features.Armaments.Armament),
+        typeof(Code.Gameplay.Features.Armaments.EffectSetups),
         typeof(Code.Gameplay.Features.Armaments.Processed),
         typeof(Code.Gameplay.Features.Armaments.TargetLimits),
         typeof(Code.Gameplay.Features.Cooldowns.Cooldown),
@@ -153,9 +156,9 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Enemies.EnemyAnimatorComponent),
         typeof(Code.Gameplay.Features.Enemies.EnemyTypeIdComponent),
         typeof(Code.Gameplay.Features.Enemies.SpawnTimer),
-        typeof(Code.Gameplay.Features.LifeTime.CurrentXp),
+        typeof(Code.Gameplay.Features.LifeTime.CurrentHp),
         typeof(Code.Gameplay.Features.LifeTime.Dead),
-        typeof(Code.Gameplay.Features.LifeTime.MaxXp),
+        typeof(Code.Gameplay.Features.LifeTime.MaxHp),
         typeof(Code.Gameplay.Features.LifeTime.ProcessingDeath),
         typeof(Code.Gameplay.Features.Movement.Direction),
         typeof(Code.Gameplay.Features.Movement.MovementAvailable),

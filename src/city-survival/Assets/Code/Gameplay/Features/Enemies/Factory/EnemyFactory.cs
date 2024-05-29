@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using Code.Common.Entity;
 using Code.Common.Extensions;
+using Code.Gameplay.Features.Armaments;
+using Code.Gameplay.Features.Effect;
 using Code.Infrastructure.Identifiers;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 
 namespace Code.Gameplay.Features.Enemies.Factory
@@ -34,9 +37,9 @@ namespace Code.Gameplay.Features.Enemies.Factory
                     .AddWorldPosition(at)
                     .AddEnemyTypeId(EnemyTypeId.Zombie)
                     .AddSpeed(1)
-                    .AddCurrentXp(10)
-                    .AddMaxXp(3)
-                    .AddDamage(1)
+                    .AddCurrentHp(10)
+                    .AddMaxHp(3)
+                    .AddEffectSetups(new List<EffectSetup>() {new EffectSetup(){EffectTypeId = EffectTypeId.Damage, Value = 1}})
                     .AddTargetBuffer(new List<int>(1))
                     .AddViewPath("Enemy/Zombie")//Resources path. TODO:place Addressable labels
                     .AddCollectTargetRadius(1)

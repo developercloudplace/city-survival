@@ -31,7 +31,7 @@ namespace Code.Gameplay.Features.Armaments.Factory
                 .AddId(_identifier.Next())
                 .AddWorldPosition(at)
                 .AddViewPrefab(abilityLevel.ViewPrefab)
-                .AddDamage(1)
+                .AddEffectSetups(abilityLevel.EffectSetups)
                 .AddSpeed(setup.Speed)
                 .AddRotate(Quaternion.identity)
                 .AddCollectTargetRadius(setup.ContactSphereRadios)

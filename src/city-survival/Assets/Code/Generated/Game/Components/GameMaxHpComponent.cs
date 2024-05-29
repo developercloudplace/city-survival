@@ -8,17 +8,17 @@
 //------------------------------------------------------------------------------
 public sealed partial class GameMatcher {
 
-    static Entitas.IMatcher<GameEntity> _matcherMaxXp;
+    static Entitas.IMatcher<GameEntity> _matcherMaxHp;
 
-    public static Entitas.IMatcher<GameEntity> MaxXp {
+    public static Entitas.IMatcher<GameEntity> MaxHp {
         get {
-            if (_matcherMaxXp == null) {
-                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.MaxXp);
+            if (_matcherMaxHp == null) {
+                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.MaxHp);
                 matcher.componentNames = GameComponentsLookup.componentNames;
-                _matcherMaxXp = matcher;
+                _matcherMaxHp = matcher;
             }
 
-            return _matcherMaxXp;
+            return _matcherMaxHp;
         }
     }
 }
@@ -33,28 +33,28 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Code.Gameplay.Features.LifeTime.MaxXp maxXp { get { return (Code.Gameplay.Features.LifeTime.MaxXp)GetComponent(GameComponentsLookup.MaxXp); } }
-    public float MaxXp { get { return maxXp.Value; } }
-    public bool hasMaxXp { get { return HasComponent(GameComponentsLookup.MaxXp); } }
+    public Code.Gameplay.Features.LifeTime.MaxHp maxHp { get { return (Code.Gameplay.Features.LifeTime.MaxHp)GetComponent(GameComponentsLookup.MaxHp); } }
+    public float MaxHp { get { return maxHp.Value; } }
+    public bool hasMaxHp { get { return HasComponent(GameComponentsLookup.MaxHp); } }
 
-    public GameEntity AddMaxXp(float newValue) {
-        var index = GameComponentsLookup.MaxXp;
-        var component = (Code.Gameplay.Features.LifeTime.MaxXp)CreateComponent(index, typeof(Code.Gameplay.Features.LifeTime.MaxXp));
+    public GameEntity AddMaxHp(float newValue) {
+        var index = GameComponentsLookup.MaxHp;
+        var component = (Code.Gameplay.Features.LifeTime.MaxHp)CreateComponent(index, typeof(Code.Gameplay.Features.LifeTime.MaxHp));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
     }
 
-    public GameEntity ReplaceMaxXp(float newValue) {
-        var index = GameComponentsLookup.MaxXp;
-        var component = (Code.Gameplay.Features.LifeTime.MaxXp)CreateComponent(index, typeof(Code.Gameplay.Features.LifeTime.MaxXp));
+    public GameEntity ReplaceMaxHp(float newValue) {
+        var index = GameComponentsLookup.MaxHp;
+        var component = (Code.Gameplay.Features.LifeTime.MaxHp)CreateComponent(index, typeof(Code.Gameplay.Features.LifeTime.MaxHp));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;
     }
 
-    public GameEntity RemoveMaxXp() {
-        RemoveComponent(GameComponentsLookup.MaxXp);
+    public GameEntity RemoveMaxHp() {
+        RemoveComponent(GameComponentsLookup.MaxHp);
         return this;
     }
 }

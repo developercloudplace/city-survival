@@ -12,15 +12,15 @@ namespace Code.Gameplay.Features.LifeTime.System
         {
             _entities = game.GetGroup(GameMatcher
                 .AllOf(
-                    GameMatcher.CurrentXp,
-                    GameMatcher.MaxXp).NoneOf(GameMatcher.Dead));
+                    GameMatcher.CurrentHp,
+                    GameMatcher.MaxHp).NoneOf(GameMatcher.Dead));
         }
 
         public void Execute()
         {
             foreach (GameEntity entity in _entities.GetEntities(_buffer))
             {
-                if (entity.CurrentXp <= 0)
+                if (entity.CurrentHp <= 0)
                 {
                     entity.isDead = true;
                     entity.isProcessingDeath = true;

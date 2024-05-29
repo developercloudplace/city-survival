@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Code.Gameplay.Features.Armaments;
 using Code.Gameplay.Features.Effect;
 using Code.Infrastructure.View;
 
