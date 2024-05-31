@@ -17,65 +17,66 @@ public static class GameComponentsLookup {
     public const int DamageTakenAnimator = 6;
     public const int Id = 7;
     public const int Rotate = 8;
-    public const int Transform = 9;
-    public const int Velocity = 10;
-    public const int WorldPosition = 11;
-    public const int AbilityId = 12;
-    public const int CurrentTarget = 13;
-    public const int CurrentTargetPosition = 14;
-    public const int DroneAbility = 15;
-    public const int MachineGunAbility = 16;
-    public const int Armament = 17;
-    public const int EffectSetups = 18;
-    public const int Processed = 19;
-    public const int StatusSetups = 20;
-    public const int TargetLimits = 21;
-    public const int Cooldown = 22;
-    public const int CooldownLeft = 23;
-    public const int CooldownUp = 24;
-    public const int DamageEffect = 25;
-    public const int Effect = 26;
-    public const int EffectValue = 27;
-    public const int ProducerId = 28;
-    public const int TargetId = 29;
-    public const int Enemy = 30;
-    public const int EnemyAnimator = 31;
-    public const int EnemyTypeId = 32;
-    public const int SpawnTimer = 33;
-    public const int CurrentHp = 34;
-    public const int Dead = 35;
-    public const int MaxHp = 36;
-    public const int ProcessingDeath = 37;
-    public const int Direction = 38;
-    public const int MovementAvailable = 39;
-    public const int Moving = 40;
-    public const int Rotating = 41;
-    public const int Speed = 42;
-    public const int Player = 43;
-    public const int PlayerAnimator = 44;
-    public const int Affected = 45;
-    public const int Applied = 46;
-    public const int Burning = 47;
-    public const int Duration = 48;
-    public const int Freeze = 49;
-    public const int Period = 50;
-    public const int Status = 51;
-    public const int StatusTypeId = 52;
-    public const int TimeLeft = 53;
-    public const int TimeSinceLastTick = 54;
-    public const int Unapplied = 55;
-    public const int CollectingTargetsContinuously = 56;
-    public const int CollectTargetRadius = 57;
-    public const int CollectTargetsInterval = 58;
-    public const int CollectTargetsTimer = 59;
-    public const int LayerMask = 60;
-    public const int ProcessedTargetsBuffer = 61;
-    public const int ReadyToCollectTargets = 62;
-    public const int TargetBuffer = 63;
-    public const int AxisInput = 64;
-    public const int Input = 65;
+    public const int StatusVisuals = 9;
+    public const int Transform = 10;
+    public const int Velocity = 11;
+    public const int WorldPosition = 12;
+    public const int AbilityId = 13;
+    public const int CurrentTarget = 14;
+    public const int CurrentTargetPosition = 15;
+    public const int DroneAbility = 16;
+    public const int MachineGunAbility = 17;
+    public const int Armament = 18;
+    public const int EffectSetups = 19;
+    public const int Processed = 20;
+    public const int StatusSetups = 21;
+    public const int TargetLimits = 22;
+    public const int Cooldown = 23;
+    public const int CooldownLeft = 24;
+    public const int CooldownUp = 25;
+    public const int DamageEffect = 26;
+    public const int Effect = 27;
+    public const int EffectValue = 28;
+    public const int ProducerId = 29;
+    public const int TargetId = 30;
+    public const int Enemy = 31;
+    public const int EnemyAnimator = 32;
+    public const int EnemyTypeId = 33;
+    public const int SpawnTimer = 34;
+    public const int CurrentHp = 35;
+    public const int Dead = 36;
+    public const int MaxHp = 37;
+    public const int ProcessingDeath = 38;
+    public const int Direction = 39;
+    public const int MovementAvailable = 40;
+    public const int Moving = 41;
+    public const int Rotating = 42;
+    public const int Speed = 43;
+    public const int Player = 44;
+    public const int PlayerAnimator = 45;
+    public const int Affected = 46;
+    public const int Applied = 47;
+    public const int Burning = 48;
+    public const int Duration = 49;
+    public const int Freeze = 50;
+    public const int Period = 51;
+    public const int Status = 52;
+    public const int StatusTypeId = 53;
+    public const int TimeLeft = 54;
+    public const int TimeSinceLastTick = 55;
+    public const int Unapplied = 56;
+    public const int CollectingTargetsContinuously = 57;
+    public const int CollectTargetRadius = 58;
+    public const int CollectTargetsInterval = 59;
+    public const int CollectTargetsTimer = 60;
+    public const int LayerMask = 61;
+    public const int ProcessedTargetsBuffer = 62;
+    public const int ReadyToCollectTargets = 63;
+    public const int TargetBuffer = 64;
+    public const int AxisInput = 65;
+    public const int Input = 66;
 
-    public const int TotalComponents = 66;
+    public const int TotalComponents = 67;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -87,6 +88,7 @@ public static class GameComponentsLookup {
         "DamageTakenAnimator",
         "Id",
         "Rotate",
+        "StatusVisuals",
         "Transform",
         "Velocity",
         "WorldPosition",
@@ -156,6 +158,7 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Common.DamageTakenAnimatorComponent),
         typeof(Code.Gameplay.Common.Id),
         typeof(Code.Gameplay.Common.RotateComponent),
+        typeof(Code.Gameplay.Common.StatusVisualsComponent),
         typeof(Code.Gameplay.Common.TransformComponent),
         typeof(Code.Gameplay.Common.Velocity),
         typeof(Code.Gameplay.Common.WorldPosition),

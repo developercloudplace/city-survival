@@ -12,4 +12,5 @@ namespace Code.Gameplay.Common
     [Game] public class Velocity: IComponent {public float Value;}
     [Game] public class Damage: IComponent {public float Value;}
     [Game] public class DamageTakenAnimatorComponent: IComponent {public IDamageTakenAnimator  Value;}
-} 
+    [Game] public class StatusVisualsComponent : IComponent { public IStatusVisuals Value; }
+}

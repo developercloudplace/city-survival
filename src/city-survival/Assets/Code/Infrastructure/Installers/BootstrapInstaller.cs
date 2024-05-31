@@ -91,7 +91,7 @@ namespace Code.Infrastructure.Installers
 
         private void BindCustomEntityIndices()
         {
-            Container.BindInterfacesAndSelfTo<GameEntityIndices>();
+            Container.BindInterfacesAndSelfTo<GameEntityIndices>().AsSingle();
         }
 
         private void BindInputService()

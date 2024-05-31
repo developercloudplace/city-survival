@@ -19,10 +19,15 @@ MonoBehaviour:
       type: 3}
     EffectSetups:
     - EffectTypeId: 1
-      Value: 10
+      Value: 1
+    StatusSetups:
+    - StatusTypeId: 1
+      Value: 1
+      Duration: 2
+      Period: 1
     ProjectileSetup:
       Speed: 10
-      Pierce: 100
+      Pierce: 1
       ContactSphereRadios: 1
       LifeTime: 4
       SpawnPoint: {fileID: 0}

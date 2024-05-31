@@ -29,7 +29,7 @@ namespace Code.Gameplay.Features.Statuses.Factory
             status
                 .With(x => x.AddDuration(setup.Duration), when: setup.Duration > 0)
                 .With(x => x.AddTimeLeft(setup.Duration), when: setup.Duration > 0)
-                .With(x => x.AddPeriod(setup.Duration), when: setup.Period > 0)
+                .With(x => x.AddPeriod(setup.Period), when: setup.Period > 0)
                 .With(x => x.AddTimeSinceLastTick(0), when: setup.Period > 0);
             return status;
         }
@@ -38,10 +38,12 @@ namespace Code.Gameplay.Features.Statuses.Factory
         {
             return CreateEntity.Empty()
                 .AddId(_identifierService.Next())
+                .AddStatusTypeId(StatusTypeId.Burning)
                 .AddEffectValue(setup.Value)
                 .AddProducerId(producerId)
                 .AddTargetId(targetId)
-                .With(x => x.isStatus = true);
+                .With(x => x.isStatus = true)
+                .With(x => x.isBurning = true);
         }
     }
 }
