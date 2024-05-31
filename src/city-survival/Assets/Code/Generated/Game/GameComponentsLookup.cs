@@ -60,21 +60,22 @@ public static class GameComponentsLookup {
     public const int Freeze = 49;
     public const int Period = 50;
     public const int Status = 51;
-    public const int TimeLeft = 52;
-    public const int TimeSinceLastTick = 53;
-    public const int Unapplied = 54;
-    public const int CollectingTargetsContinuously = 55;
-    public const int CollectTargetRadius = 56;
-    public const int CollectTargetsInterval = 57;
-    public const int CollectTargetsTimer = 58;
-    public const int LayerMask = 59;
-    public const int ProcessedTargetsBuffer = 60;
-    public const int ReadyToCollectTargets = 61;
-    public const int TargetBuffer = 62;
-    public const int AxisInput = 63;
-    public const int Input = 64;
+    public const int StatusTypeId = 52;
+    public const int TimeLeft = 53;
+    public const int TimeSinceLastTick = 54;
+    public const int Unapplied = 55;
+    public const int CollectingTargetsContinuously = 56;
+    public const int CollectTargetRadius = 57;
+    public const int CollectTargetsInterval = 58;
+    public const int CollectTargetsTimer = 59;
+    public const int LayerMask = 60;
+    public const int ProcessedTargetsBuffer = 61;
+    public const int ReadyToCollectTargets = 62;
+    public const int TargetBuffer = 63;
+    public const int AxisInput = 64;
+    public const int Input = 65;
 
-    public const int TotalComponents = 65;
+    public const int TotalComponents = 66;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -129,6 +130,7 @@ public static class GameComponentsLookup {
         "Freeze",
         "Period",
         "Status",
+        "StatusTypeId",
         "TimeLeft",
         "TimeSinceLastTick",
         "Unapplied",
@@ -197,6 +199,7 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Statuses.Freeze),
         typeof(Code.Gameplay.Features.Statuses.Period),
         typeof(Code.Gameplay.Features.Statuses.Status),
+        typeof(Code.Gameplay.Features.Statuses.StatusTypeIdComponent),
         typeof(Code.Gameplay.Features.Statuses.TimeLeft),
         typeof(Code.Gameplay.Features.Statuses.TimeSinceLastTick),
         typeof(Code.Gameplay.Features.Statuses.Unapplied),

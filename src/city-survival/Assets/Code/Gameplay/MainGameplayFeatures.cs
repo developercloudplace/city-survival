@@ -6,6 +6,7 @@ using Code.Gameplay.Features.Enemies;
 using Code.Gameplay.Features.LifeTime;
 using Code.Gameplay.Features.Movement;
 using Code.Gameplay.Features.Player;
+using Code.Gameplay.Features.Statuses;
 using Code.Gameplay.Features.TargetCollection;
 using Code.Gameplay.Input;
 using Code.Infrastructure.System;
@@ -29,6 +30,7 @@ namespace Code.Gameplay
             Add(systemFactory.Create<CollectTargetsFeature>());
             Add(systemFactory.Create<EffectApplicationFeatures>());
             Add(systemFactory.Create<EffectFeature>());
+            Add(systemFactory.Create<StatusFeature>());
             Add(systemFactory.Create<ProcessDestructedFeature>());
             Add(systemFactory.Create<DeadFeature>());
         }

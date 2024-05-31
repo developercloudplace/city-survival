@@ -1,5 +1,6 @@
 ﻿using Code.Common.Extensions;
 using Code.Gameplay.Features.Statuses;
+using Code.Gameplay.Features.Statuses.Applier;
 using Code.Gameplay.Features.Statuses.Factory;
 using Entitas;
 
@@ -7,13 +8,15 @@ namespace Code.Gameplay.Features.EffectApplication.System
 {
     public class ApplyStatusesOnTargetsSystem : IExecuteSystem
     {
-        private readonly IStatusFactory _statusFactory;
-        private readonly IGroup<GameEntity> _entities;
         
+        private readonly IGroup<GameEntity> _entities;
+        private IStatusApplier _statusApplier;
 
-        public ApplyStatusesOnTargetsSystem(GameContext gameContext, IStatusFactory statusFactory)
+
+        public ApplyStatusesOnTargetsSystem(GameContext gameContext,IStatusApplier statusApplier)
         {
-            _statusFactory = statusFactory;
+            _statusApplier = statusApplier;
+            
             
             _entities = gameContext.GetGroup(GameMatcher
                 .AllOf(
@@ -27,8 +30,7 @@ namespace Code.Gameplay.Features.EffectApplication.System
             foreach (int targetId in entity.TargetBuffer)
             foreach (StatusSetup setup in entity.StatusSetups)
             {
-                _statusFactory.CreateStatus(setup, ProducerId(entity), targetId)
-                    .With(x => x.isApplied = true);
+                _statusApplier.ApplyStatus(setup, ProducerId(entity), targetId);
             }
         }
 

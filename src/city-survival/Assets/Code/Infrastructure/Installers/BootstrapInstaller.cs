@@ -1,4 +1,5 @@
-﻿using Code.Gameplay.Cameras.Provider;
+﻿using Code.Common.EntityIndices;
+using Code.Gameplay.Cameras.Provider;
 using Code.Gameplay.Common.Collisions;
 using Code.Gameplay.Common.Physics;
 using Code.Gameplay.Common.Random;
@@ -8,6 +9,7 @@ using Code.Gameplay.Features.Armaments.Factory;
 using Code.Gameplay.Features.Effect.Factory;
 using Code.Gameplay.Features.Enemies.Factory;
 using Code.Gameplay.Features.Player.Factory;
+using Code.Gameplay.Features.Statuses.Applier;
 using Code.Gameplay.Features.Statuses.Factory;
 using Code.Gameplay.Input.Service;
 using Code.Gameplay.Levels;
@@ -35,6 +37,7 @@ namespace Code.Infrastructure.Installers
             BindContext();
             BindGameplayService();
             BindGameplayFactory();
+            BindCustomEntityIndices();
         }
 
         private void BindSystemFactory()
@@ -63,6 +66,7 @@ namespace Code.Infrastructure.Installers
         {
             Container.Bind<IStaticDataService>().To<StaticDataService>().AsSingle();
             Container.Bind<ILevelDataProvider>().To<LevelDataProvider>().AsSingle();
+            Container.Bind<IStatusApplier>().To<StatusApplier>().AsSingle();
         }
 
         private void BindInfrastructureServices()
@@ -83,6 +87,11 @@ namespace Code.Infrastructure.Installers
             Container.Bind<IPhysicsService>().To<PhysicsService>().AsSingle();
             Container.Bind<ITimeService>().To<UnityTimeService>().AsSingle();
             Container.Bind<ISceneLoader>().To<SceneLoader>().AsSingle();
+        }
+
+        private void BindCustomEntityIndices()
+        {
+            Container.BindInterfacesAndSelfTo<GameEntityIndices>();
         }
 
         private void BindInputService()

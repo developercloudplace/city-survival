@@ -1,4 +1,4 @@
-﻿using Code.Gameplay.Features.LifeTime.System;
+﻿using Code.Gameplay.Features.LifeTime.Systems;
 using Code.Infrastructure.System;
 
 namespace Code.Gameplay.Features.LifeTime
@@ -8,6 +8,7 @@ namespace Code.Gameplay.Features.LifeTime
         public DeadFeature(ISystemFactory systems)
         {
             Add(systems.Create<MarkDeadSystem>());
+            Add(systems.Create<UnapplyStatusesOfDeadTargetSystem>());
         }
     }
 }
