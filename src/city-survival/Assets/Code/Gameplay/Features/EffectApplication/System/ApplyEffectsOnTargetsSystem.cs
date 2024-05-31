@@ -33,13 +33,3 @@ namespace Code.Gameplay.Features.EffectApplication.System
             entity.hasProducerId ? entity.ProducerId : entity.Id;
     }
 }
-
-// GameEntity target = _gameContext.GetEntityWithId(targetId);
-// if (target.hasCurrentXp)
-// {
-//     target.ReplaceCurrentXp(target.CurrentXp - damageDealer.Damage);
-//     if (target.hasDamageTakenAnimator)
-//     {
-//         target.DamageTakenAnimator.PlayDamageTaken();
-//     }
-// }
