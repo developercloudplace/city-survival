@@ -4,16 +4,16 @@ using Entitas;
 
 namespace Code.Gameplay.Features.Statuses.Systems.StatusVisuals
 {
-    public class ApplyBurningVisualSystem : ReactiveSystem<GameEntity>
+    public class ApplyFreezeVisualSystem : ReactiveSystem<GameEntity>
     {
-        public ApplyBurningVisualSystem(GameContext game) : base(game)
+        public ApplyFreezeVisualSystem(GameContext game) : base(game)
         {
         }
 
         protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context) => 
-            context.CreateCollector(GameMatcher.Burning.Added());
+            context.CreateCollector(GameMatcher.Freeze.Added());
 
-        protected override bool Filter(GameEntity entity) => entity.isStatus && entity.isBurning && entity.hasTargetId;
+        protected override bool Filter(GameEntity entity) => entity.isStatus && entity.isFreeze && entity.hasTargetId;
 
         protected override void Execute(List<GameEntity> statuses)
         {
@@ -21,7 +21,7 @@ namespace Code.Gameplay.Features.Statuses.Systems.StatusVisuals
             {
                 GameEntity target = status.Target();
                 if (target is {hasStatusVisuals: true}) 
-                    target.StatusVisuals.ApplyBurning();
+                    target.StatusVisuals.ApplyFreeze();
             }
         }
     }

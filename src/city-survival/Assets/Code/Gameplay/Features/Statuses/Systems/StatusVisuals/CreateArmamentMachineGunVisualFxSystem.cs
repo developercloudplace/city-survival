@@ -4,9 +4,9 @@ using Entitas;
 
 namespace Code.Gameplay.Features.Statuses.Systems.StatusVisuals
 {
-    public class ApplyBurningVisualSystem : ReactiveSystem<GameEntity>
+    public class CreateArmamentMachineGunVisualFxSystem : ReactiveSystem<GameEntity>
     {
-        public ApplyBurningVisualSystem(GameContext game) : base(game)
+        public CreateArmamentMachineGunVisualFxSystem(GameContext game) : base(game)
         {
         }
 

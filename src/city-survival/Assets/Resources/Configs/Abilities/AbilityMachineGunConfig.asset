@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AbilityId: 2
   Levels:
-  - Cooldown: 0.4
+  - Cooldown: 3
     ViewPrefab: {fileID: 4283663605577815849, guid: e6449f49d32794c4d9fa8d692d70d175,
       type: 3}
     EffectSetups:
@@ -24,9 +24,13 @@ MonoBehaviour:
     - StatusTypeId: 1
       Value: 1
       Duration: 2
-      Period: 1
+      Period: 0.5
+    - StatusTypeId: 2
+      Value: -5
+      Duration: 1
+      Period: 0
     ProjectileSetup:
-      Speed: 10
+      Speed: 5
       Pierce: 1
       ContactSphereRadios: 1
       LifeTime: 4

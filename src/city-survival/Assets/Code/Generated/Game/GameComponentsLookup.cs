@@ -31,52 +31,56 @@ public static class GameComponentsLookup {
     public const int Processed = 20;
     public const int StatusSetups = 21;
     public const int TargetLimits = 22;
-    public const int Cooldown = 23;
-    public const int CooldownLeft = 24;
-    public const int CooldownUp = 25;
-    public const int DamageEffect = 26;
-    public const int Effect = 27;
-    public const int EffectValue = 28;
-    public const int ProducerId = 29;
-    public const int TargetId = 30;
-    public const int Enemy = 31;
-    public const int EnemyAnimator = 32;
-    public const int EnemyTypeId = 33;
-    public const int SpawnTimer = 34;
-    public const int CurrentHp = 35;
-    public const int Dead = 36;
-    public const int MaxHp = 37;
-    public const int ProcessingDeath = 38;
-    public const int Direction = 39;
-    public const int MovementAvailable = 40;
-    public const int Moving = 41;
-    public const int Rotating = 42;
-    public const int Speed = 43;
-    public const int Player = 44;
-    public const int PlayerAnimator = 45;
-    public const int Affected = 46;
-    public const int Applied = 47;
-    public const int Burning = 48;
-    public const int Duration = 49;
-    public const int Freeze = 50;
-    public const int Period = 51;
-    public const int Status = 52;
-    public const int StatusTypeId = 53;
-    public const int TimeLeft = 54;
-    public const int TimeSinceLastTick = 55;
-    public const int Unapplied = 56;
-    public const int CollectingTargetsContinuously = 57;
-    public const int CollectTargetRadius = 58;
-    public const int CollectTargetsInterval = 59;
-    public const int CollectTargetsTimer = 60;
-    public const int LayerMask = 61;
-    public const int ProcessedTargetsBuffer = 62;
-    public const int ReadyToCollectTargets = 63;
-    public const int TargetBuffer = 64;
-    public const int AxisInput = 65;
-    public const int Input = 66;
+    public const int BaseStats = 23;
+    public const int StatChange = 24;
+    public const int StatModifiers = 25;
+    public const int Cooldown = 26;
+    public const int CooldownLeft = 27;
+    public const int CooldownUp = 28;
+    public const int DamageEffect = 29;
+    public const int Effect = 30;
+    public const int EffectValue = 31;
+    public const int ProducerId = 32;
+    public const int TargetId = 33;
+    public const int Enemy = 34;
+    public const int EnemyAnimator = 35;
+    public const int EnemyTypeId = 36;
+    public const int SpawnTimer = 37;
+    public const int CurrentHp = 38;
+    public const int Dead = 39;
+    public const int MaxHp = 40;
+    public const int ProcessingDeath = 41;
+    public const int Direction = 42;
+    public const int MovementAvailable = 43;
+    public const int Moving = 44;
+    public const int Rotating = 45;
+    public const int Speed = 46;
+    public const int Player = 47;
+    public const int PlayerAnimator = 48;
+    public const int Affected = 49;
+    public const int Applied = 50;
+    public const int ApplierStatusLink = 51;
+    public const int Burning = 52;
+    public const int Duration = 53;
+    public const int Freeze = 54;
+    public const int Period = 55;
+    public const int Status = 56;
+    public const int StatusTypeId = 57;
+    public const int TimeLeft = 58;
+    public const int TimeSinceLastTick = 59;
+    public const int Unapplied = 60;
+    public const int CollectingTargetsContinuously = 61;
+    public const int CollectTargetRadius = 62;
+    public const int CollectTargetsInterval = 63;
+    public const int CollectTargetsTimer = 64;
+    public const int LayerMask = 65;
+    public const int ProcessedTargetsBuffer = 66;
+    public const int ReadyToCollectTargets = 67;
+    public const int TargetBuffer = 68;
+    public const int AxisInput = 69;
+    public const int Input = 70;
 
-    public const int TotalComponents = 67;
+    public const int TotalComponents = 71;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -102,6 +106,9 @@ public static class GameComponentsLookup {
         "Processed",
         "StatusSetups",
         "TargetLimits",
+        "BaseStats",
+        "StatChange",
+        "StatModifiers",
         "Cooldown",
         "CooldownLeft",
         "CooldownUp",
@@ -127,6 +134,7 @@ public static class GameComponentsLookup {
         "PlayerAnimator",
         "Affected",
         "Applied",
+        "ApplierStatusLink",
         "Burning",
         "Duration",
         "Freeze",
@@ -172,6 +180,9 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Armaments.Processed),
         typeof(Code.Gameplay.Features.Armaments.StatusSetups),
         typeof(Code.Gameplay.Features.Armaments.TargetLimits),
+        typeof(Code.Gameplay.Features.CharacterStats.BaseStats),
+        typeof(Code.Gameplay.Features.CharacterStats.StatChange),
+        typeof(Code.Gameplay.Features.CharacterStats.StatModifiers),
         typeof(Code.Gameplay.Features.Cooldowns.Cooldown),
         typeof(Code.Gameplay.Features.Cooldowns.CooldownLeft),
         typeof(Code.Gameplay.Features.Cooldowns.CooldownUp),
@@ -197,6 +208,7 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Player.Systems.PlayerAnimatorComponent),
         typeof(Code.Gameplay.Features.Statuses.Affected),
         typeof(Code.Gameplay.Features.Statuses.Applied),
+        typeof(Code.Gameplay.Features.Statuses.ApplierStatusLink),
         typeof(Code.Gameplay.Features.Statuses.Burning),
         typeof(Code.Gameplay.Features.Statuses.Duration),
         typeof(Code.Gameplay.Features.Statuses.Freeze),

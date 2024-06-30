@@ -9,6 +9,9 @@ namespace Code.Gameplay.Features.Statuses.Systems
         {
             Add(systems.Create<ApplyBurningVisualSystem>());
             Add(systems.Create<UnapplyBurningVisualSystem>());
+            
+            Add(systems.Create<ApplyFreezeVisualSystem>());
+            Add(systems.Create<UnapplyFreezeVisualSystem>());
         }
     }
 }

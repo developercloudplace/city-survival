@@ -49,6 +49,7 @@ namespace Code.Gameplay.Features.Abilities.System
                             .normalized)
                         .With(x => x.isArmament = true);
 
+                     
                     machineGun.PutOnCooldown(_staticData.GetAbilityLevel(AbilityId.MachineGun, 1).Cooldown);
                 }
             }

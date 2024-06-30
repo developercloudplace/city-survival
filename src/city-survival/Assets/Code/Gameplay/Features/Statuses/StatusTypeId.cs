@@ -3,6 +3,7 @@
     public enum StatusTypeId
     {
         Unknown = 0,
-        Burning = 1
+        Burning = 1,
+        Freeze = 2
     }
 }
