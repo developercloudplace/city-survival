@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Code.Gameplay.Features.Player;
+
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherPlayer;
@@ -33,7 +36,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Code.Gameplay.Features.Player.Systems.Player playerComponent = new Code.Gameplay.Features.Player.Systems.Player();
+    static readonly Player playerComponent = new Player();
 
     public bool isPlayer {
         get { return HasComponent(GameComponentsLookup.Player); }

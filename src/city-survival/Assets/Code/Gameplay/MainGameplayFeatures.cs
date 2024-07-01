@@ -6,6 +6,7 @@ using Code.Gameplay.Features.Effect;
 using Code.Gameplay.Features.EffectApplication;
 using Code.Gameplay.Features.Enemies;
 using Code.Gameplay.Features.LifeTime;
+using Code.Gameplay.Features.Loot;
 using Code.Gameplay.Features.Movement;
 using Code.Gameplay.Features.Player;
 using Code.Gameplay.Features.Statuses;
@@ -26,6 +27,8 @@ namespace Code.Gameplay
             Add(systemFactory.Create<MovementFeatures>());
             Add(systemFactory.Create<PlayerFeatures>());
             Add(systemFactory.Create<EnemyFeatures>());
+            Add(systemFactory.Create<LootingFeature>());
+            
             Add(systemFactory.Create<AbilityFeature>());
             Add(systemFactory.Create<ArmamentFeature>());
             
@@ -39,4 +42,5 @@ namespace Code.Gameplay
             Add(systemFactory.Create<DeadFeature>());
         }
     }
+    
 }

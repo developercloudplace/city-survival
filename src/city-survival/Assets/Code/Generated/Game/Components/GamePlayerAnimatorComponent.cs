@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Code.Gameplay.Features.Player;
+
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherPlayerAnimator;
@@ -33,13 +36,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Code.Gameplay.Features.Player.Systems.PlayerAnimatorComponent playerAnimator { get { return (Code.Gameplay.Features.Player.Systems.PlayerAnimatorComponent)GetComponent(GameComponentsLookup.PlayerAnimator); } }
+    public PlayerAnimatorComponent playerAnimator { get { return (PlayerAnimatorComponent)GetComponent(GameComponentsLookup.PlayerAnimator); } }
     public Code.Gameplay.Features.Player.Behaviours.PlayerAnimator PlayerAnimator { get { return playerAnimator.Value; } }
     public bool hasPlayerAnimator { get { return HasComponent(GameComponentsLookup.PlayerAnimator); } }
 
     public GameEntity AddPlayerAnimator(Code.Gameplay.Features.Player.Behaviours.PlayerAnimator newValue) {
         var index = GameComponentsLookup.PlayerAnimator;
-        var component = (Code.Gameplay.Features.Player.Systems.PlayerAnimatorComponent)CreateComponent(index, typeof(Code.Gameplay.Features.Player.Systems.PlayerAnimatorComponent));
+        var component = (PlayerAnimatorComponent)CreateComponent(index, typeof(PlayerAnimatorComponent));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +50,7 @@ public partial class GameEntity {
 
     public GameEntity ReplacePlayerAnimator(Code.Gameplay.Features.Player.Behaviours.PlayerAnimator newValue) {
         var index = GameComponentsLookup.PlayerAnimator;
-        var component = (Code.Gameplay.Features.Player.Systems.PlayerAnimatorComponent)CreateComponent(index, typeof(Code.Gameplay.Features.Player.Systems.PlayerAnimatorComponent));
+        var component = (PlayerAnimatorComponent)CreateComponent(index, typeof(PlayerAnimatorComponent));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

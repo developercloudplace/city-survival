@@ -30,6 +30,8 @@ namespace Code.Gameplay.Features.Player.Factory
                     .AddSpeed(baseStats[Stats.Speed])
                     .AddCurrentHp(baseStats[Stats.MaxHp])
                     .AddMaxHp(baseStats[Stats.MaxHp])
+                    .AddExperience(0)
+                    .AddPickupRadius(3)
                     .AddViewPath("Player/Player") //Resources path. TODO:place Addressable labels
                     .AddDirection(Vector3.zero)
                     .With(x => x.isPlayer = true)
